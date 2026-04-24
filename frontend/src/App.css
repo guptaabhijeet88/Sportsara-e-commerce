@@ -1,0 +1,33 @@
+body {
+  background-color: #f8f9fa; /* A very soft, premium gray background */
+}
+
+/* Make the category and product cards lift up smoothly on hover */
+.card, .category-card {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover, .category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Make images scale slightly for a premium feel */
+.card-img-top {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.03);
+}
+
+/* Smooth out the buttons */
+.btn {
+  transition: all 0.2s ease;
+  border-radius: 8px; /* Modern rounded corners */
+}
+
+.btn:active {
+  transform: scale(0.95); /* Satisfying click effect */
+}
