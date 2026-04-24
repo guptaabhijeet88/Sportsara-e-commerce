@@ -223,9 +223,20 @@ router.post('/google', async (req, res) => {
         password: randomPassword,
         avatar: picture,
       });
-    } else if (picture && user.avatar !== picture) {
-      user.avatar = picture;
-      await user.save();
+    } else {
+      // Update existing user with latest Google info
+      let isUpdated = false;
+      if (picture && user.avatar !== picture) {
+        user.avatar = picture;
+        isUpdated = true;
+      }
+      if (name && user.name !== name) {
+        user.name = name;
+        isUpdated = true;
+      }
+      if (isUpdated) {
+        await user.save();
+      }
     }
 
     const token = generateToken(user._id);
