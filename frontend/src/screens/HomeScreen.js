@@ -1,15 +1,18 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, Carousel, Card, Container, Image, Button } from 'react-bootstrap';
 import Product from '../components/Product';
+import { SkeletonRow, SkeletonStrip } from '../components/ProductSkeleton';
 import axios from 'axios';
 import API from '../utils/api';
+import { getCachedProducts, setCachedProducts } from '../utils/productCache';
 
 const HomeScreen = () => {
   const [products, setProducts] = useState([]);
   const [hitArrival, setHitArrival] = useState([]);
   const [hotPicks, setHotPicks] = useState([]);
   const [featured, setFeatured] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const scrollRef = useRef(null);
   const scrollRefArrivals = useRef(null);
@@ -28,34 +31,55 @@ const HomeScreen = () => {
     }
   };
 
+  // Process raw API data into the 4 sections
+  const processData = useCallback((data) => {
+    const footballGear = data.filter(item => item.name.includes('Football'));
+    const newArrivals = data.filter(item => item.category === 'Team Sports' && !item.name.includes('Football'));
+    const trendingPicks = data.filter(item => item.category !== 'Team Sports');
+    const featuredItems = data.filter(item => item.featured);
+
+    const rotateArray = (arr, offset) => {
+      if (arr.length === 0) return arr;
+      const shift = offset % arr.length;
+      return [...arr.slice(shift), ...arr.slice(0, shift)];
+    };
+
+    const periodOffset = Math.floor(Date.now() / (12 * 60 * 60 * 1000));
+
+    setProducts(footballGear);
+    setHitArrival(newArrivals);
+    setHotPicks(rotateArray(trendingPicks, periodOffset).slice(0, 10));
+    setFeatured(rotateArray(featuredItems, periodOffset));
+    setLoading(false);
+  }, []);
+
   useEffect(() => {
     const fetchProducts = async () => {
+      // 1️⃣ Try cache first (instant — no network at all)
+      const cached = getCachedProducts();
+      if (cached) {
+        processData(cached);
+        // Still refresh in background (stale-while-revalidate)
+        axios.get(`${API}/products`).then(({ data }) => {
+          setCachedProducts(data);
+          processData(data);
+        }).catch(() => { /* cache is good enough */ });
+        return;
+      }
+
+      // 2️⃣ No cache — fetch from API (this is the slow path on cold start)
       try {
+        setLoading(true);
         const { data } = await axios.get(`${API}/products`);
-
-        const footballGear = data.filter(item => item.name.includes('Football'));
-        const newArrivals = data.filter(item => item.category === 'Team Sports' && !item.name.includes('Football'));
-        const trendingPicks = data.filter(item => item.category !== 'Team Sports');
-        const featuredItems = data.filter(item => item.featured);
-
-        const rotateArray = (arr, offset) => {
-          if (arr.length === 0) return arr;
-          const shift = offset % arr.length;
-          return [...arr.slice(shift), ...arr.slice(0, shift)];
-        };
-
-        const periodOffset = Math.floor(Date.now() / (12 * 60 * 60 * 1000));
-
-        setProducts(footballGear);
-        setHitArrival(newArrivals);
-        setHotPicks(rotateArray(trendingPicks, periodOffset).slice(0, 10));
-        setFeatured(rotateArray(featuredItems, periodOffset));
+        setCachedProducts(data);
+        processData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
+        setLoading(false);
       }
     };
     fetchProducts();
-  }, []);
+  }, [processData]);
 
   // Each category strip item maps to a search/category filter on the Shop page
   const topCategories = [
@@ -111,18 +135,18 @@ const HomeScreen = () => {
 
       <Container>
         {/* 3. FEATURED PRODUCTS */}
-        {featured.length > 0 && (
-          <>
-            <h2 className="text-center mb-4" style={{ fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>⭐ Featured Products</h2>
-            <Row className="mb-5">
-              {featured.slice(0, 4).map((product) => (
-                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                  <Product product={product} />
-                </Col>
-              ))}
-            </Row>
-          </>
-        )}
+        <h2 className="text-center mb-4" style={{ fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>⭐ Featured Products</h2>
+        <Row className="mb-5">
+          {loading ? (
+            <SkeletonRow count={4} />
+          ) : featured.length > 0 ? (
+            featured.slice(0, 4).map((product) => (
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))
+          ) : null}
+        </Row>
 
         {/* 4. SHOP BY CATEGORY — each navigates to filtered shop */}
         <h2 className="text-center mb-2" style={{ fontWeight: '900', letterSpacing: '-0.5px', fontSize: '2.5rem' }}>Explore Categories</h2>
@@ -183,14 +207,18 @@ const HomeScreen = () => {
             ‹
           </Button>
 
-          <div className="d-flex overflow-auto category-strip pb-4 mb-5"
-            style={{ gap: '20px', outline: 'none' }} ref={scrollRef} tabIndex="0">
-            {hotPicks.map((product) => (
-              <div key={product._id} style={{ width: '280px', flex: '0 0 auto' }}>
-                <Product product={product} />
-              </div>
-            ))}
-          </div>
+          {loading ? (
+            <SkeletonStrip count={5} />
+          ) : (
+            <div className="d-flex overflow-auto category-strip pb-4 mb-5"
+              style={{ gap: '20px', outline: 'none' }} ref={scrollRef} tabIndex="0">
+              {hotPicks.map((product) => (
+                <div key={product._id} style={{ width: '280px', flex: '0 0 auto' }}>
+                  <Product product={product} />
+                </div>
+              ))}
+            </div>
+          )}
 
           <Button variant="light" className="rounded-circle shadow"
             style={{ position: 'absolute', top: '40%', right: '-20px', transform: 'translateY(-50%)', zIndex: 10, width: '45px', height: '45px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
@@ -202,11 +230,15 @@ const HomeScreen = () => {
         {/* 6. MAIN PRODUCTS GRID */}
         <h2 className="mb-4" style={{ fontWeight: 'bold' }}>Latest Footballs ⚽</h2>
         <Row>
-          {products.map((product) => (
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-              <Product product={product} />
-            </Col>
-          ))}
+          {loading ? (
+            <SkeletonRow count={4} />
+          ) : (
+            products.map((product) => (
+              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                <Product product={product} />
+              </Col>
+            ))
+          )}
         </Row>
 
         <h2 className="mt-5 mb-4" style={{ fontWeight: 'bold' }}>Hit Arrivals 🔥</h2>
@@ -217,14 +249,18 @@ const HomeScreen = () => {
             ‹
           </Button>
 
-          <div className="d-flex overflow-auto category-strip pb-4 mb-5"
-            style={{ gap: '20px', outline: 'none' }} ref={scrollRefArrivals} tabIndex="0">
-            {hitArrival.map((product) => (
-              <div key={product._id} style={{ width: '280px', flex: '0 0 auto' }}>
-                <Product product={product} />
-              </div>
-            ))}
-          </div>
+          {loading ? (
+            <SkeletonStrip count={5} />
+          ) : (
+            <div className="d-flex overflow-auto category-strip pb-4 mb-5"
+              style={{ gap: '20px', outline: 'none' }} ref={scrollRefArrivals} tabIndex="0">
+              {hitArrival.map((product) => (
+                <div key={product._id} style={{ width: '280px', flex: '0 0 auto' }}>
+                  <Product product={product} />
+                </div>
+              ))}
+            </div>
+          )}
 
           <Button variant="light" className="rounded-circle shadow"
             style={{ position: 'absolute', top: '40%', right: '-20px', transform: 'translateY(-50%)', zIndex: 10, width: '45px', height: '45px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}

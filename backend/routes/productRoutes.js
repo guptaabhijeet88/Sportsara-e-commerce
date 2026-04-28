@@ -39,7 +39,10 @@ router.get('/', async (req, res) => {
     if (sort === 'rating') sortOption = { rating: -1 };
     if (sort === 'name') sortOption = { name: 1 };
 
-    const products = await Product.find(filter).sort(sortOption).lean();
+    const products = await Product.find(filter)
+      .sort(sortOption)
+      .select('name image brand category description price mrp rating stock featured colors')
+      .lean();
 
     res.set('Cache-Control', 'public, max-age=120, stale-while-revalidate=300');
     res.json(products);

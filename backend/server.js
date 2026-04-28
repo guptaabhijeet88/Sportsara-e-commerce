@@ -4,6 +4,7 @@ dns.setDefaultResultOrder('ipv4first');
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import compression from 'compression';
 import connectDB from './config/db.js';
 import path from 'path';
 
@@ -25,6 +26,9 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Gzip compression — reduces JSON payload size by ~70%
+app.use(compression());
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));

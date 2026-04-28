@@ -64,7 +64,7 @@ const Product = ({ product }) => {
     <Card className="my-3 p-3 rounded h-100 shadow-sm border-0 product-card">
       <Link to={`/product/${product._id}`}>
         <div style={{ position: 'relative' }}>
-          <Card.Img src={product.image} variant="top" style={{ borderRadius: '8px' }} />
+          <Card.Img src={product.image} variant="top" loading="lazy" style={{ borderRadius: '8px' }} />
           {discount > 0 && (
             <Badge bg="danger" className="position-absolute" style={{ top: 10, right: 10, fontSize: '0.75rem' }}>
               {discount}% OFF

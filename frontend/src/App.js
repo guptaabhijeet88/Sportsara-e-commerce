@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { startKeepAlive } from './utils/keepAlive';
 
 // Components
 import Header from './components/Header';
@@ -79,6 +81,10 @@ function AppContent() {
 }
 
 function App() {
+  useEffect(() => {
+    startKeepAlive();
+  }, []);
+
   return (
     <AuthProvider>
       <CartProvider>

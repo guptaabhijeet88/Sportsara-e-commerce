@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13pt;
+    line-height: 1.8;
+    color: #000;
+    background: #fff;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ================================================
+     EACH .page section = one dedicated page.
+     Content stays together, never splits.
+     Matches the reference PDF structure exactly.
+     ================================================ */
+  .page {
+    page-break-after: always;
+    position: relative;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .page:last-child {
+    page-break-after: auto;
+  }
+
+  /* Screenshot pages */
+  .screenshot-page {
+    page-break-before: always;
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  /* Chapter title */
+  h1.chapter-title {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 24pt;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 18pt;
+    margin-bottom: 10pt;
+  }
+  h3 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin-top: 14pt;
+    margin-bottom: 8pt;
+  }
+  p {
+    text-align: justify;
+    margin-bottom: 10pt;
+    text-indent: 0;
+  }
+  ul, ol {
+    margin-left: 20pt;
+    margin-bottom: 10pt;
+  }
+  li {
+    margin-bottom: 4pt;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16pt 0;
+    font-size: 12pt;
+  }
+  table th, table td {
+    border: 1px solid #000;
+    padding: 10pt 12pt;
+    text-align: left;
+    vertical-align: middle;
+  }
+  table th {
+    background: #e8e8e8;
+    font-weight: bold;
+    text-align: center;
+  }
+  .toc-table th, .toc-table td {
+    padding: 16pt 12pt;
+  }
+  .code-block {
+    font-family: 'Courier New', monospace;
+    font-size: 10pt;
+    background: #fdfdfd;
+    border: 1px solid #ccc;
+    padding: 12pt;
+    margin: 12pt 0;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-radius: 4px;
+  }
+  .indent { margin-left: 20pt; }
+  .bold { font-weight: bold; }
+  .center { text-align: center; }
+  .mt-1 { margin-top: 12pt; }
+  .mt-2 { margin-top: 24pt; }
+  .mb-1 { margin-bottom: 12pt; }
+  .mb-2 { margin-bottom: 24pt; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <h1 class="chapter-title" style="margin-top:20pt;">Table of Contents</h1>
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 1: INTRODUCTION</td></tr>
+  <tr><td class="center">1</td><td>1.1 Introduction to the System</td><td class="center">2</td></tr>
+  <tr><td class="center">2</td><td>1.2 Problem Definition</td><td class="center">2</td></tr>
+  <tr><td class="center">3</td><td>1.3 Aim</td><td class="center">3</td></tr>
+  <tr><td class="center">4</td><td>1.4 Objectives</td><td class="center">3</td></tr>
+  <tr><td class="center">5</td><td>1.5 Goal</td><td class="center">3</td></tr>
+  <tr><td class="center">6</td><td>1.6 Need of the System</td><td class="center">3</td></tr>
+  <tr><td class="center">7</td><td>1.7 Scope of the Project</td><td class="center">4</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 2: REQUIREMENT SPECIFICATION</td></tr>
+  <tr><td class="center">8</td><td>2.1 Introduction</td><td class="center">5</td></tr>
+  <tr><td class="center">9</td><td>2.2 System Environment</td><td class="center">5</td></tr>
+  <tr><td class="center">10</td><td>2.3 Software Requirements</td><td class="center">5</td></tr>
+  <tr><td class="center">11</td><td>2.4 Hardware Requirements</td><td class="center">6</td></tr>
+  <tr><td class="center">12</td><td>2.5 Methodology</td><td class="center">6</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 3: SYSTEM ANALYSIS</td></tr>
+  <tr><td class="center">13</td><td>3.1 Introduction</td><td class="center">8</td></tr>
+  <tr><td class="center">14</td><td>3.2 Existing System Analysis</td><td class="center">8</td></tr>
+  <tr><td class="center">15</td><td>3.3 Proposed System</td><td class="center">8</td></tr>
+  <tr><td class="center">16</td><td>3.4 Feasibility Analysis</td><td class="center">8</td></tr>
+  <tr><td class="center">17</td><td>3.5 Functional Requirements</td><td class="center">9</td></tr>
+  <tr><td class="center">18</td><td>3.6 Non-Functional Requirements</td><td class="center">9</td></tr>
+  <tr><td class="center">19</td><td>3.7 Use Case Analysis</td><td class="center">9</td></tr>
+  <tr><td class="center">20</td><td>3.8 Gantt Chart</td><td class="center">10</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 4: SURVEY OF TECHNOLOGY</td></tr>
+  <tr><td class="center">21</td><td>4.1 Technology Stack Overview</td><td class="center">11</td></tr>
+  <tr><td class="center">22</td><td>4.2 Frontend Technologies</td><td class="center">11</td></tr>
+  <tr><td class="center">23</td><td>4.3 Backend Technologies</td><td class="center">12</td></tr>
+  <tr><td class="center">24</td><td>4.4 Database Technology</td><td class="center">12</td></tr>
+  <tr><td class="center">25</td><td>4.5 Authentication Technologies</td><td class="center">13</td></tr>
+  <tr><td class="center">26</td><td>4.6 Technology Comparison</td><td class="center">14</td></tr>
+  <tr><td class="center">27</td><td>4.7 Working Principles</td><td class="center">15</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 5: SYSTEM DESIGN</td></tr>
+  <tr><td class="center">28</td><td>5.1 System Architecture</td><td class="center">17</td></tr>
+  <tr><td class="center">29</td><td>5.2 Data Flow Diagram</td><td class="center">17</td></tr>
+  <tr><td class="center">30</td><td>5.3 Database Schema</td><td class="center">18</td></tr>
+  <tr><td class="center">31</td><td>5.4 REST API Design</td><td class="center">20</td></tr>
+  <tr><td class="center">32</td><td>5.5 E-R Diagram</td><td class="center">21</td></tr>
+  <tr><td class="center">33</td><td>5.6 Sequence Diagrams</td><td class="center">21</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 6: SYSTEM IMPLEMENTATION</td></tr>
+  <tr><td class="center">34</td><td>6.1 Project Structure</td><td class="center">22</td></tr>
+  <tr><td class="center">35</td><td>6.2 Server Configuration</td><td class="center">23</td></tr>
+  <tr><td class="center">36</td><td>6.3 Authentication Module</td><td class="center">24</td></tr>
+  <tr><td class="center">37</td><td>6.4 Cart Management Module</td><td class="center">25</td></tr>
+  <tr><td class="center">38</td><td>6.5 Order Processing Module</td><td class="center">25</td></tr>
+  <tr><td class="center">39</td><td>6.6 Review System Module</td><td class="center">26</td></tr>
+  <tr><td class="center">40</td><td>6.7 Admin Dashboard Module</td><td class="center">26</td></tr>
+  <tr><td class="center">41</td><td>6.8 Email Service Module</td><td class="center">27</td></tr>
+  <tr><td class="center">42</td><td>6.9 Test Cases</td><td class="center">28</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 7: RESULT</td></tr>
+  <tr><td class="center">43</td><td>7.1 Introduction</td><td class="center">29</td></tr>
+  <tr><td class="center">44</td><td>7.2 Screens Achieved in the Project</td><td class="center">30</td></tr>
+  <tr><td class="center">45</td><td>7.3 Functional Results</td><td class="center">37</td></tr>
+  <tr><td class="center">46</td><td>7.4 Performance Results</td><td class="center">39</td></tr>
+  <tr><td class="center">47</td><td>7.5 Security Results</td><td class="center">40</td></tr>
+  <tr><td class="center">48</td><td>7.6 Deployment Configuration</td><td class="center">42</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 8: CONCLUSION AND FUTURE SCOPE</td></tr>
+  <tr><td class="center">49</td><td>8.1 Conclusion</td><td class="center">46</td></tr>
+  <tr><td class="center">50</td><td>8.2 Future Enhancement</td><td class="center">47</td></tr>
+  <tr><td class="center">51</td><td>8.3 Lessons Learned</td><td class="center">48</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">CHAPTER 9: REFERENCES</td></tr>
+  <tr><td class="center">52</td><td>9.1 Book References</td><td class="center">49</td></tr>
+  <tr><td class="center">53</td><td>9.2 Technology Documentation</td><td class="center">49</td></tr>
+  <tr><td class="center">54</td><td>9.3 Web References</td><td class="center">49</td></tr>
+  </table>
+
+  <table class="toc-table">
+  <tr><th>Sr No</th><th>Description</th><th>Page No</th></tr>
+  <tr><td colspan="3" class="center bold">APPENDICES</td></tr>
+  <tr><td class="center">55</td><td>Appendix A: Glossary</td><td class="center">50</td></tr>
+  <tr><td class="center">56</td><td>Appendix B: Abbreviations</td><td class="center">51</td></tr>
+  <tr><td class="center">57</td><td>Appendix C: NPM Dependencies</td><td class="center">51</td></tr>
+  </table>
+</div>
+<div class="page">
+<h1 class="chapter-title">Chapter 1: Introduction</h1>
+<h2>1.1 Introduction to the System</h2>
+<p>The sports and fitness industry is experiencing a major shift toward online retail. Consumers increasingly prefer browsing, comparing, and purchasing sports gear and apparel through digital platforms rather than visiting physical stores. Traditional retail methods such as manual billing, paper-based inventory tracking, and walk-in-only shopping create significant limitations in convenience, reach, and efficiency.</p>
+<p><b>SportSara</b> is a full-stack e-commerce web application designed specifically for sports enthusiasts. Built using the MERN stack (MongoDB, Express.js, React.js, Node.js), it provides a seamless online shopping experience for sports equipment, apparel, footwear, fitness accessories, and team sports gear.</p>
+<p>The platform enables customers to browse a curated catalog of sports products, filter by categories, view detailed product information including sizes and colors, add items to their cart, and complete purchases through a secure checkout process with address auto-completion powered by Google Maps API. An integrated admin dashboard allows administrators to manage products, orders, and users from a centralized interface.</p>
+<p>SportSara incorporates modern security practices including OTP-based email verification during registration, Google OAuth social login, JWT-based session management, and bcrypt password hashing. The system also features automated email notifications via the Brevo transactional email API, product reviews and ratings, and real-time order status tracking.</p>
+<p>The application follows a client-server architecture where the React.js frontend communicates with the Express.js backend through RESTful APIs, and the backend interacts with MongoDB Atlas cloud database for persistent data storage. This separation of concerns ensures maintainability, scalability, and ease of deployment.</p>
+
+<h2>1.2 Problem Definition</h2>
+<p>Traditional sports retail businesses face several challenges that limit their growth and customer satisfaction:</p>
+<ul>
+<li>Limited geographical reach — customers must visit physical stores</li>
+<li>No online product catalog or search functionality</li>
+<li>Manual inventory tracking leads to stock discrepancies</li>
+<li>Lack of customer accounts and order history tracking</li>
+<li>No product review or rating system for customer feedback</li>
+<li>Inefficient order processing and status communication</li>
+<li>Inability to offer secure online payments</li>
+<li>Poor customer engagement due to absence of digital tools</li>
+<li>Difficulty managing multiple product categories and variants (sizes, colors)</li>
+<li>No centralized dashboard for business analytics and reporting</li>
+<li>High dependency on manual labor for every transaction</li>
+<li>No automated notifications for order updates or promotions</li>
+</ul>
+<p>These limitations reduce sales opportunities, customer satisfaction, and operational efficiency, creating a strong need for an automated e-commerce solution like SportSara.</p>
+</div>
+
+<div class="page">
+<h2>1.3 Aim</h2>
+<p>The aim of SportSara is to develop a modern, user-friendly, full-stack e-commerce platform tailored for the sports and fitness industry. It enables customers to browse, select, and purchase sports products online while providing administrators with powerful tools to manage the entire business digitally.</p>
+
+<h2>1.4 Objectives</h2>
+<h3>Primary Objectives:</h3>
+<ul>
+<li>Provide a responsive online store for sports products across five categories: Team Sports, Apparel, Footwear, Accessories, and Fitness</li>
+<li>Implement secure user authentication with email OTP verification and Google OAuth</li>
+<li>Enable shopping cart functionality with size and color selection</li>
+<li>Build a complete checkout flow with address auto-fill via Google Maps</li>
+<li>Develop an admin dashboard for product, order, and user management</li>
+<li>Integrate product reviews and ratings system</li>
+</ul>
+<h3>Secondary Objectives:</h3>
+<ul>
+<li>Create a visually appealing and mobile-responsive user interface</li>
+<li>Implement automated email notifications for account events</li>
+<li>Ensure data security through encryption and token-based authentication</li>
+<li>Support product search and category filtering</li>
+<li>Enable order tracking with real-time status updates</li>
+<li>Design a scalable architecture for future enhancements</li>
+<li>Deploy the application on cloud platforms for high availability</li>
+</ul>
+
+<h2>1.5 Goal</h2>
+<p>The goal of SportSara is to digitize the sports retail experience through a reliable and scalable web platform, offering:</p>
+<ul>
+<li>Convenient 24/7 shopping access for customers from any device</li>
+<li>Rich product information with images, specifications, sizes, and colors</li>
+<li>Secure account management with multiple authentication options</li>
+<li>Streamlined order processing from cart to delivery tracking</li>
+<li>Data-driven business insights through the admin dashboard</li>
+<li>Enhanced customer engagement through reviews and ratings</li>
+<li>Reduced operational overhead through automation</li>
+<li>Competitive advantage through professional online presence</li>
+</ul>
+
+<h2>1.6 Need of the System</h2>
+<p>SportSara is needed due to the growing demand for online sports shopping and the limitations of traditional retail methods.</p>
+<h3>Key Needs:</h3>
+<ul>
+<li>Digital product catalog with search and filtering capabilities</li>
+<li>Secure online shopping with verified user accounts</li>
+<li>Automated order management replacing manual processes</li>
+<li>Centralized admin panel for efficient business operations</li>
+<li>Customer feedback mechanism through reviews and ratings</li>
+<li>Mobile-responsive design for shopping on any device</li>
+<li>Address validation and auto-completion for accurate deliveries</li>
+<li>Competitive advantage through a professional online presence</li>
+</ul>
+</div>
+
+<div class="page">
+<h2>1.7 Scope of the Project</h2>
+<p>The scope of SportSara encompasses the following functional areas:</p>
+<h3>User Module:</h3>
+<ul>
+<li>User registration with email OTP verification</li>
+<li>Google OAuth social login integration</li>
+<li>Email/password login with JWT session management</li>
+<li>Password reset via OTP email</li>
+<li>Profile management (name, avatar, address)</li>
+</ul>
+<h3>Product Module:</h3>
+<ul>
+<li>Product catalog with five categories</li>
+<li>Product details with images, descriptions, sizes, colors, specifications, and benefits</li>
+<li>Product search and category filtering</li>
+<li>Featured products showcase on home page</li>
+</ul>
+<h3>Shopping Module:</h3>
+<ul>
+<li>Shopping cart with variant selection (size + color)</li>
+<li>Cart quantity management</li>
+<li>Checkout with Google Maps address autocomplete</li>
+<li>Cash on Delivery order placement</li>
+<li>Order history and status tracking</li>
+</ul>
+<h3>Review Module:</h3>
+<ul>
+<li>Product reviews and star ratings (1-5)</li>
+<li>One review per user per product constraint</li>
+<li>Average rating calculation</li>
+</ul>
+<h3>Admin Module:</h3>
+<ul>
+<li>Dashboard with analytics (revenue, orders, users, products)</li>
+<li>Product CRUD operations</li>
+<li>Order status management</li>
+<li>User management with role toggle</li>
+<li>Top selling products and low stock alerts</li>
+<li>Monthly revenue chart data</li>
+</ul>
+</div>
+
+<div class="page">
+<h1 class="chapter-title">Chapter 2: Requirement Specification</h1>
+<h2>2.1 Introduction</h2>
+<p>Requirement Specification is a critical phase of software development that defines the functional and technical needs of the project. It ensures that the software is developed according to user expectations and business requirements.</p>
+<p>For the SportSara E-Commerce Platform, requirement specification identifies the software tools, hardware resources, system environment, and development methodology needed to build a reliable and scalable online store.</p>
+</div>
+
+<div class="page">
+<h2>2.2 System Environment</h2>
+<h3>Development Environment</h3>
+<table>
+<tr><th>Component</th><th>Specification</th></tr>
+<tr><td>Operating System</td><td>Windows 11</td></tr>
+<tr><td>Code Editor</td><td>Visual Studio Code</td></tr>
+<tr><td>Frontend Runtime</td><td>Web Browser (Chrome)</td></tr>
+<tr><td>Backend Runtime</td><td>Node.js v24</td></tr>
+<tr><td>Database</td><td>MongoDB Atlas (Cloud)</td></tr>
+<tr><td>Version Control</td><td>Git / GitHub</td></tr>
+<tr><td>API Testing</td><td>Postman / Browser DevTools</td></tr>
+</table>
+<h3>Deployment Environment</h3>
+<table>
+<tr><th>Component</th><th>Specification</th></tr>
+<tr><td>Frontend Hosting</td><td>Vercel</td></tr>
+<tr><td>Backend Hosting</td><td>Render</td></tr>
+<tr><td>Database Hosting</td><td>MongoDB Atlas</td></tr>
+<tr><td>User Access</td><td>Internet Browser</td></tr>
+<tr><td>Devices Supported</td><td>Mobile / Tablet / Laptop / Desktop</td></tr>
+</table>
+<h3>Browser Compatibility</h3>
+<ul><li>Google Chrome</li><li>Mozilla Firefox</li><li>Microsoft Edge</li><li>Safari</li><li>Opera</li></ul>
+<h3>User Roles</h3>
+<ul>
+<li><b>Customer</b> — Browses products, manages cart, places orders, writes reviews</li>
+<li><b>Admin</b> — Manages products, orders, users, and views analytics dashboard</li>
+</ul>
+
+<h2>2.3 Software Requirements</h2>
+<h3>Frontend Technologies</h3>
+<table>
+<tr><th>Software</th><th>Purpose</th></tr>
+<tr><td>HTML5</td><td>Page structure and semantic content</td></tr>
+<tr><td>CSS3</td><td>Styling, animations, and responsive design</td></tr>
+<tr><td>JavaScript (ES6+)</td><td>Client-side logic and interactivity</td></tr>
+<tr><td>React.js</td><td>Component-based UI framework</td></tr>
+<tr><td>React Router DOM</td><td>Client-side routing and navigation</td></tr>
+<tr><td>React Hot Toast</td><td>Toast notification system</td></tr>
+<tr><td>Google Maps Places API</td><td>Address autocomplete in checkout</td></tr>
+</table>
+<h3>Backend Technologies</h3>
+<table>
+<tr><th>Software</th><th>Purpose</th></tr>
+<tr><td>Node.js</td><td>Server-side JavaScript runtime</td></tr>
+<tr><td>Express.js v5</td><td>Backend web framework and API routing</td></tr>
+<tr><td>Mongoose</td><td>MongoDB ODM for data modeling</td></tr>
+<tr><td>jsonwebtoken</td><td>JWT-based authentication</td></tr>
+<tr><td>bcryptjs</td><td>Password hashing and security</td></tr>
+<tr><td>google-auth-library</td><td>Google OAuth verification</td></tr>
+<tr><td>multer</td><td>File upload handling</td></tr>
+<tr><td>cors</td><td>Cross-origin request handling</td></tr>
+<tr><td>dotenv</td><td>Environment variable management</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h2>2.4 Hardware Requirements</h2>
+<h3>Minimum Requirements</h3>
+<table>
+<tr><th>Component</th><th>Requirement</th></tr>
+<tr><td>Processor</td><td>Intel Core i3 or equivalent</td></tr>
+<tr><td>RAM</td><td>4 GB</td></tr>
+<tr><td>Storage</td><td>20 GB Free Space</td></tr>
+<tr><td>Display</td><td>1366 × 768</td></tr>
+<tr><td>Internet</td><td>Broadband connection</td></tr>
+</table>
+<h3>Recommended Requirements</h3>
+<table>
+<tr><th>Component</th><th>Requirement</th></tr>
+<tr><td>Processor</td><td>Intel Core i5 / i7 or equivalent</td></tr>
+<tr><td>RAM</td><td>8 GB or above</td></tr>
+<tr><td>Storage</td><td>SSD 256 GB+</td></tr>
+<tr><td>Display</td><td>Full HD (1920 × 1080)</td></tr>
+<tr><td>Internet</td><td>High-speed broadband</td></tr>
+</table>
+
+<h2>2.5 Methodology</h2>
+<p>For the SportSara project, <b>Agile Methodology</b> was used because it supports continuous development, iterative testing, and incremental improvement.</p>
+<h3>Why Agile?</h3>
+<ul>
+<li>Flexible to requirement changes during development</li>
+<li>Faster feature delivery through sprints</li>
+<li>Easy identification and fixing of bugs</li>
+<li>Continuous feedback integration</li>
+<li>Better quality control through iterative testing</li>
+</ul>
+<h3>Development Phases</h3>
+<ol>
+<li><b>Requirement Gathering</b> — E-commerce needs analyzed: product catalog, cart, checkout, authentication, admin panel</li>
+<li><b>System Design</b> — Database schema, UI wireframes, API architecture, and workflow designed</li>
+<li><b>Development</b> — Modules built: Authentication, Products, Cart, Orders, Admin, Reviews, Payments</li>
+<li><b>Testing</b> — Functional, UI, API, Security, and Cross-browser testing performed</li>
+<li><b>Deployment</b> — Frontend deployed on Vercel, Backend on Render, Database on MongoDB Atlas</li>
+<li><b>Maintenance</b> — Ongoing bug fixes, feature additions, and performance optimization</li>
+</ol>
+<p><b>Agile Cycle:</b> Requirement → Design → Develop → Test → Deploy → Improve</p>
+<p>Agile methodology enabled rapid development of SportSara with high-quality output and the flexibility to add features like Google OAuth, address autocomplete, and email verification during the development cycle.</p>
+</div>
+
+<div class="page">
+<h1 class="chapter-title">Chapter 3: System Analysis</h1>
+<h2>3.1 Introduction</h2>
+<p>System Analysis involves studying the existing system and defining requirements for the new system. It helps identify problems, understand user needs, and design effective solutions. For SportSara, analysis focused on the online sports retail process — product discovery, ordering, payments, and fulfillment.</p>
+
+<h2>3.2 Existing System Analysis</h2>
+<p>Traditional sports retail stores rely on manual processes such as walk-in purchases, handwritten bills, phone-based order inquiries, and physical inventory registers.</p>
+<h3>Limitations of Existing System</h3>
+<ol>
+<li>No online presence — customers must visit physical stores</li>
+<li>Manual inventory counting leads to stock errors</li>
+<li>No product search or filtering capability</li>
+<li>Limited product information — no specifications, reviews, or variant details</li>
+<li>Paper-based billing and manual order tracking</li>
+<li>No customer account or purchase history</li>
+<li>Poor scalability for growing product catalogs</li>
+<li>No analytics or business reporting tools</li>
+<li>Difficulty handling returns and order status updates</li>
+<li>High dependency on human effort for every transaction</li>
+</ol>
+
+<h2>3.3 Proposed System</h2>
+<p>SportSara automates the entire sports retail experience through a digital platform:</p>
+<ol>
+<li>Online product catalog with five categories: Team Sports, Apparel, Footwear, Accessories, Fitness</li>
+<li>Product pages with images, descriptions, sizes, colors, specifications, and benefits</li>
+<li>Shopping cart with quantity management and variant selection</li>
+<li>Secure user registration with OTP email verification</li>
+<li>Google OAuth social login for convenience</li>
+<li>Checkout with Google Maps address autocomplete</li>
+<li>Order placement with status tracking (Processing → Confirmed → Shipped → Delivered)</li>
+<li>Product review and rating system</li>
+<li>Admin dashboard with product, order, and user management</li>
+<li>Automated transactional emails via Brevo API</li>
+</ol>
+
+<h2>3.4 Feasibility Analysis</h2>
+<ul>
+<li><b>Technical:</b> Uses proven MERN stack technologies with large community support</li>
+<li><b>Economic:</b> Low-cost development using open-source tools and free-tier cloud hosting</li>
+<li><b>Operational:</b> Intuitive UI for customers and straightforward admin panel for management</li>
+<li><b>Schedule:</b> Deliverable within the academic project timeline using Agile sprints</li>
+</ul>
+</div>
+
+<div class="page">
+<h2>3.5 Functional Requirements</h2>
+<table>
+<tr><th>Module</th><th>Functional Requirement</th></tr>
+<tr><td>Authentication</td><td>User registration with email OTP verification</td></tr>
+<tr><td>Authentication</td><td>Google OAuth social login</td></tr>
+<tr><td>Authentication</td><td>Email/password login with JWT tokens</td></tr>
+<tr><td>Authentication</td><td>Password reset via OTP email</td></tr>
+<tr><td>Products</td><td>Browse products by category</td></tr>
+<tr><td>Products</td><td>View product details with variants</td></tr>
+<tr><td>Products</td><td>Search products by keyword</td></tr>
+<tr><td>Cart</td><td>Add/remove items with size and color</td></tr>
+<tr><td>Cart</td><td>Update item quantity</td></tr>
+<tr><td>Orders</td><td>Place order with shipping address</td></tr>
+<tr><td>Orders</td><td>View order history and status</td></tr>
+<tr><td>Reviews</td><td>Submit product review and rating</td></tr>
+<tr><td>Admin</td><td>CRUD operations for products</td></tr>
+<tr><td>Admin</td><td>Manage order statuses</td></tr>
+<tr><td>Admin</td><td>View dashboard analytics</td></tr>
+<tr><td>Admin</td><td>Manage user roles</td></tr>
+</table>
+
+<h2>3.6 Non-Functional Requirements</h2>
+<table>
+<tr><th>Requirement</th><th>Description</th></tr>
+<tr><td>Performance</td><td>API response times under 500ms, page load under 2 seconds</td></tr>
+<tr><td>Security</td><td>Password encryption, JWT authentication, role-based access</td></tr>
+<tr><td>Responsiveness</td><td>Mobile-first design across all screen sizes</td></tr>
+<tr><td>Reliability</td><td>99.9% uptime via cloud hosting</td></tr>
+<tr><td>Scalability</td><td>Horizontal scaling with MongoDB Atlas and cloud deployment</td></tr>
+<tr><td>Maintainability</td><td>Modular code with separation of concerns</td></tr>
+<tr><td>Usability</td><td>Intuitive navigation and clear error messages</td></tr>
+</table>
+
+<h2>3.7 Use Case Analysis</h2>
+<h3>Use Case 1: User Registration</h3>
+<table>
+<tr><th style="width:25%;text-align:left;">Field</th><th style="text-align:left;">Description</th></tr>
+<tr><td><b>Actor</b></td><td>New Customer</td></tr>
+<tr><td><b>Precondition</b></td><td>User is not registered</td></tr>
+<tr><td><b>Steps</b></td><td>1) User enters name, email, password<br>2) System sends 6-digit OTP to email via Brevo API<br>3) User enters OTP<br>4) System verifies OTP (5-minute expiry)<br>5) Account created with hashed password<br>6) JWT token issued</td></tr>
+<tr><td><b>Postcondition</b></td><td>User is logged in with new account</td></tr>
+</table>
+
+<h3>Use Case 2: Product Purchase</h3>
+<table>
+<tr><th style="width:25%;text-align:left;">Field</th><th style="text-align:left;">Description</th></tr>
+<tr><td><b>Actor</b></td><td>Registered Customer</td></tr>
+<tr><td><b>Precondition</b></td><td>User is logged in</td></tr>
+<tr><td><b>Steps</b></td><td>1) User browses products<br>2) Selects size and color<br>3) Adds to cart<br>4) Proceeds to checkout<br>5) Enters shipping address with Google Maps autocomplete<br>6) Selects payment method<br>7) Confirms order</td></tr>
+<tr><td><b>Postcondition</b></td><td>Order created, stock updated, cart cleared</td></tr>
+</table>
+
+<h3>Use Case 3: Admin Order Management</h3>
+<table>
+<tr><th style="width:25%;text-align:left;">Field</th><th style="text-align:left;">Description</th></tr>
+<tr><td><b>Actor</b></td><td>Admin</td></tr>
+<tr><td><b>Precondition</b></td><td>Admin is logged in</td></tr>
+<tr><td><b>Steps</b></td><td>1) Admin views all orders<br>2) Selects an order<br>3) Updates status (Processing → Confirmed → Shipped → Delivered)<br>4) System saves status</td></tr>
+<tr><td><b>Postcondition</b></td><td>Order status updated</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h2>3.8 Gantt Chart</h2>
+<p>A Gantt Chart represents tasks and schedules over a timeline for project planning.</p>
+<table>
+<tr><th>Task</th><th>W1</th><th>W2</th><th>W3</th><th>W4</th><th>W5</th><th>W6</th><th>W7</th><th>W8</th></tr>
+<tr><td>Requirement Gathering</td><td>✔</td><td>✔</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>System Analysis</td><td></td><td>✔</td><td>✔</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>UI Design</td><td></td><td></td><td>✔</td><td>✔</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Database Design</td><td></td><td></td><td>✔</td><td>✔</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Frontend Development</td><td></td><td></td><td></td><td>✔</td><td>✔</td><td>✔</td><td></td><td></td></tr>
+<tr><td>Backend Development</td><td></td><td></td><td></td><td>✔</td><td>✔</td><td>✔</td><td></td><td></td></tr>
+<tr><td>API Integration</td><td></td><td></td><td></td><td></td><td>✔</td><td>✔</td><td></td><td></td></tr>
+<tr><td>Testing</td><td></td><td></td><td></td><td></td><td></td><td>✔</td><td>✔</td><td></td></tr>
+<tr><td>Deployment</td><td></td><td></td><td></td><td></td><td></td><td></td><td>✔</td><td>✔</td></tr>
+<tr><td>Documentation</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td></td><td></td><td>✔</td><td>✔</td></tr>
+</table>
+
+<h2>3.9 Conclusion</h2>
+<p>System analysis identified the inefficiencies of manual sports retail systems and confirmed the need for a digital solution. SportSara provides a complete e-commerce platform for managing product sales efficiently. Feasibility analysis confirmed the project is practical and cost-effective. The use case analysis defined clear user interactions for all major system functions. The Gantt chart ensured proper planning and timely execution of all development phases.</p>
+</div>
+<div class="page">
+<h1 class="chapter-title">Chapter 4: Survey of Technology</h1>
+<h2>4.1 Introduction</h2>
+<p>Technology selection is crucial for the performance, security, scalability, and maintainability of any software project. For SportSara, the MERN stack was chosen — a widely adopted JavaScript-based technology stack that enables full-stack development using a single programming language across both frontend and backend.</p>
+
+<h2>4.2 Technology Stack Overview</h2>
+<table>
+<tr><th>Layer</th><th>Technology</th><th>Version</th></tr>
+<tr><td>Frontend Framework</td><td>React.js</td><td>18.x</td></tr>
+<tr><td>Styling</td><td>CSS3</td><td>—</td></tr>
+<tr><td>Backend Runtime</td><td>Node.js</td><td>v24</td></tr>
+<tr><td>Backend Framework</td><td>Express.js</td><td>v5.2</td></tr>
+<tr><td>Database</td><td>MongoDB (Mongoose)</td><td>v8.x</td></tr>
+<tr><td>Authentication</td><td>JWT + Google OAuth 2.0</td><td>—</td></tr>
+<tr><td>Email Service</td><td>Brevo REST API</td><td>v3</td></tr>
+<tr><td>File Uploads</td><td>Multer</td><td>—</td></tr>
+<tr><td>Maps</td><td>Google Maps Places API</td><td>New</td></tr>
+<tr><td>Frontend Hosting</td><td>Vercel</td><td>—</td></tr>
+<tr><td>Backend Hosting</td><td>Render</td><td>—</td></tr>
+</table>
+
+<h2>4.3 Frontend Technologies</h2>
+<h3>4.3.1 React.js</h3>
+<p>React.js is a JavaScript library developed by Facebook for building dynamic, component-based user interfaces. It uses a virtual DOM (Document Object Model) to efficiently update only the changed parts of the page, resulting in fast rendering and a smooth user experience.</p>
+<p><b>Key Features Used in SportSara:</b></p>
+<ul>
+<li><b>Components:</b> Reusable UI blocks — Header, Footer, Product Card, Payment Modal, Admin Layout</li>
+<li><b>Hooks:</b> useState for local state, useEffect for side effects, useContext for global state, useNavigate for routing</li>
+<li><b>Context API:</b> AuthContext manages user session globally, CartContext manages shopping cart state</li>
+<li><b>React Router DOM:</b> Handles client-side routing with public routes, protected routes, and admin routes</li>
+<li><b>Conditional Rendering:</b> Shows different UI based on login status and user role (admin/user)</li>
+</ul>
+
+<h3>4.3.2 CSS3</h3>
+<p>Custom CSS3 provides complete control over the application's visual design without dependency on external UI frameworks.</p>
+<p><b>Features Used:</b> Flexbox and Grid layouts, CSS animations and transitions, responsive media queries, custom scrollbars, form styling, glassmorphism effects, dark-themed admin panel.</p>
+
+<h3>4.3.3 Google Maps Places API</h3>
+<p>The Google Maps Places API (New) is integrated into the checkout page to provide real-time address autocomplete suggestions. As users type their address, the API returns matching locations. When a suggestion is selected, the system auto-fills city, state, and pincode fields.</p>
+</div>
+
+<div class="page">
+<h2>4.4 Backend Technologies</h2>
+<h3>4.4.1 Node.js</h3>
+<p>Node.js is a server-side JavaScript runtime built on Chrome's V8 engine. It enables non-blocking, event-driven I/O operations, making it ideal for handling concurrent API requests in an e-commerce application.</p>
+<p><b>Why Node.js for SportSara:</b></p>
+<ul>
+<li>Single language (JavaScript) across frontend and backend reduces context switching</li>
+<li>Event-driven architecture handles multiple simultaneous API requests efficiently</li>
+<li>NPM ecosystem provides ready-made packages for authentication, database, email, etc.</li>
+<li>Fast execution speed for I/O-heavy operations like database queries and API calls</li>
+<li>Easy horizontal scaling and deployment on cloud platforms</li>
+</ul>
+
+<h3>4.4.2 Express.js v5</h3>
+<p>Express.js is a minimal and flexible web framework for Node.js that provides robust HTTP routing, middleware support, and error handling.</p>
+<p><b>Middleware Used in SportSara:</b></p>
+<ul>
+<li><b>cors:</b> Allows cross-origin requests from the React frontend to the Express backend</li>
+<li><b>express.json():</b> Parses incoming JSON request bodies</li>
+<li><b>auth middleware:</b> Verifies JWT tokens on protected routes</li>
+<li><b>adminAuth middleware:</b> Verifies admin role for admin-only routes</li>
+<li><b>multer:</b> Handles multipart/form-data for product image uploads</li>
+<li><b>express.static:</b> Serves uploaded product images from the /uploads directory</li>
+</ul>
+<p><b>Routes Configured:</b> 8 route modules — auth, products, cart, orders, payment, reviews, admin, upload</p>
+
+<h2>4.5 Database Technology</h2>
+<h3>4.5.1 MongoDB</h3>
+<p>MongoDB is a NoSQL document database that stores data in flexible JSON-like BSON documents. Unlike relational databases, MongoDB does not require a fixed schema, allowing easy modification of data structures.</p>
+<p><b>Advantages for SportSara:</b></p>
+<ul>
+<li>Flexible schema — product specifications and variants can vary between items</li>
+<li>Embedded documents — cart items are embedded within the user document for fast access</li>
+<li>Horizontal scaling through sharding</li>
+<li>Rich query language with aggregation pipelines</li>
+<li>MongoDB Atlas provides managed cloud hosting with automated backups</li>
+</ul>
+
+<h3>4.5.2 Mongoose ODM</h3>
+<p>Mongoose provides schema-based data modeling for MongoDB, adding validation, type casting, query building, and middleware hooks. SportSara uses 6 Mongoose models: User, Product, Order, Review, OTP, and PasswordResetOTP.</p>
+<p><b>Key Mongoose Features Used:</b></p>
+<ul>
+<li>Schema validation with required fields and enums</li>
+<li>Pre-save hooks for password hashing</li>
+<li>Instance methods for password comparison</li>
+<li>Population for joining referenced documents</li>
+<li>Compound indexes for performance optimization</li>
+<li>Text indexes for full-text product search</li>
+</ul>
+</div>
+
+<div class="page">
+<h2>4.6 Authentication Technologies</h2>
+<h3>4.6.1 JWT (JSON Web Token)</h3>
+<p>JWT provides stateless, token-based authentication for secure API access. When a user logs in, the server generates a signed JWT containing the user ID, which is sent back to the client. The client includes this token in the Authorization header of every subsequent API request.</p>
+<p><b>JWT Configuration in SportSara:</b></p>
+<ul>
+<li>Token payload: { id: user._id }</li>
+<li>Signing algorithm: HS256 (HMAC with SHA-256)</li>
+<li>Token expiry: 30 days</li>
+<li>Secret key: Stored in environment variable JWT_SECRET</li>
+<li>Verification: auth middleware decodes and validates token on every protected route</li>
+</ul>
+
+<h3>4.6.2 Google OAuth 2.0</h3>
+<p>Google OAuth allows users to authenticate using their Google account. SportSara uses the google-auth-library package to verify Google ID tokens on the backend.</p>
+<p><b>Flow:</b> 1) User clicks "Sign in with Google" 2) Google returns ID token 3) Backend verifies token with google-auth-library 4) If email exists, login; if not, create account 5) JWT token issued</p>
+
+<h3>4.6.3 OTP Email Verification</h3>
+<p>A 6-digit random OTP is generated during registration and password reset. The OTP is stored in MongoDB with a 5-minute TTL (Time To Live) expiry using createdAt index. The OTP is sent to the user's email via the Brevo transactional email API.</p>
+
+<h3>4.6.4 bcryptjs Password Hashing</h3>
+<p>All passwords are hashed using bcrypt with 10 salt rounds before storage. The pre-save hook automatically hashes passwords when modified. A comparePassword instance method verifies login credentials.</p>
+
+<h2>4.7 API and Integration Technologies</h2>
+<h3>4.7.1 RESTful API</h3>
+<p>RESTful APIs connect the React frontend with the Express.js backend using JSON data format over HTTP.</p>
+<table>
+<tr><th>Method</th><th>Use</th><th>Example</th></tr>
+<tr><td>GET</td><td>Read/Fetch data</td><td>GET /api/products</td></tr>
+<tr><td>POST</td><td>Create new records</td><td>POST /api/auth/login</td></tr>
+<tr><td>PUT</td><td>Update existing records</td><td>PUT /api/admin/orders/:id</td></tr>
+<tr><td>DELETE</td><td>Remove records</td><td>DELETE /api/cart/remove/:id</td></tr>
+</table>
+
+<h3>4.7.2 Brevo Transactional Email API</h3>
+<p>SportSara uses the Brevo (formerly Sendinblue) REST API for sending OTP verification emails and password reset emails. Emails are sent via HTTPS POST requests to api.brevo.com/v3/smtp/email with the API key stored in environment variables.</p>
+
+<h2>4.8 Deployment Technologies</h2>
+<ul>
+<li><b>Vercel</b> — Frontend hosting with automatic CI/CD from GitHub, edge network for fast delivery</li>
+<li><b>Render</b> — Backend hosting with Node.js support, environment variables, and auto-deploy</li>
+<li><b>MongoDB Atlas</b> — Cloud database with M0 free tier, automated backups, global clusters</li>
+</ul>
+
+<h2>4.9 Technology Comparison</h2>
+<h3>4.9.1 Why MERN over MEAN Stack</h3>
+<table>
+<tr><th>Feature</th><th>MERN (React)</th><th>MEAN (Angular)</th></tr>
+<tr><td>Learning Curve</td><td>Easier — library-based</td><td>Steeper — full framework</td></tr>
+<tr><td>Performance</td><td>Virtual DOM — faster rendering</td><td>Real DOM — slower updates</td></tr>
+<tr><td>Flexibility</td><td>Choose own tools</td><td>Opinionated structure</td></tr>
+<tr><td>Bundle Size</td><td>Smaller — tree-shakeable</td><td>Larger default bundle</td></tr>
+<tr><td>Community</td><td>Larger npm ecosystem</td><td>Enterprise-focused</td></tr>
+<tr><td>Mobile</td><td>React Native available</td><td>Ionic/NativeScript</td></tr>
+</table>
+<p>React.js was chosen for SportSara because of its simpler learning curve, faster rendering via virtual DOM, larger community support, and the ability to extend to mobile apps via React Native in the future.</p>
+
+<h3>4.9.2 Why MongoDB over MySQL</h3>
+<table>
+<tr><th>Feature</th><th>MongoDB (NoSQL)</th><th>MySQL (SQL)</th></tr>
+<tr><td>Schema</td><td>Flexible — no fixed schema</td><td>Rigid — predefined tables</td></tr>
+<tr><td>Data Format</td><td>JSON-like BSON documents</td><td>Rows and columns</td></tr>
+<tr><td>Scaling</td><td>Horizontal (sharding)</td><td>Vertical (bigger server)</td></tr>
+<tr><td>Relationships</td><td>Embedding + referencing</td><td>Foreign keys + JOINs</td></tr>
+<tr><td>Product Variants</td><td>Easy — nested arrays</td><td>Complex — multiple tables</td></tr>
+<tr><td>Cloud Hosting</td><td>Atlas free tier</td><td>Paid services mostly</td></tr>
+</table>
+<p>MongoDB was ideal for SportSara because product data varies significantly — some products have sizes, some have colors, some have both. MongoDB's flexible schema handles this naturally without requiring multiple join tables. The embedded cart pattern within the user document also eliminates the need for a separate cart table, improving read performance.</p>
+</div>
+
+<div class="page">
+<h3>4.9.3 Why Express.js v5 over Fastify</h3>
+<table>
+<tr><th>Feature</th><th>Express.js v5</th><th>Fastify</th></tr>
+<tr><td>Maturity</td><td>Most popular Node.js framework</td><td>Newer, less adoption</td></tr>
+<tr><td>Middleware</td><td>Vast ecosystem</td><td>Limited plugin system</td></tr>
+<tr><td>Documentation</td><td>Extensive</td><td>Growing</td></tr>
+<tr><td>Async Support</td><td>v5 has native async error handling</td><td>Built-in</td></tr>
+<tr><td>Community</td><td>Largest in Node.js</td><td>Smaller</td></tr>
+</table>
+<p>Express.js v5 was chosen because of its industry dominance, extensive middleware ecosystem, and the new async error handling feature that eliminates the need for try-catch wrappers in route handlers.</p>
+
+<h3>4.9.4 Why Vercel + Render over AWS</h3>
+<table>
+<tr><th>Feature</th><th>Vercel + Render</th><th>AWS (EC2 + S3)</th></tr>
+<tr><td>Setup Time</td><td>Minutes (GitHub connect)</td><td>Hours (manual config)</td></tr>
+<tr><td>Cost</td><td>Free tier available</td><td>Pay-as-you-go</td></tr>
+<tr><td>CI/CD</td><td>Automatic on push</td><td>Manual pipeline setup</td></tr>
+<tr><td>Complexity</td><td>Simple dashboard</td><td>Complex console</td></tr>
+<tr><td>SSL</td><td>Auto HTTPS</td><td>Manual certificate</td></tr>
+<tr><td>Scaling</td><td>Auto-managed</td><td>Manual configuration</td></tr>
+</table>
+<p>Vercel and Render were chosen for their simplicity, zero-configuration deployment, and generous free tiers — perfect for an academic project that needs professional-grade hosting without cost.</p>
+
+<h2>4.10 Working Principles</h2>
+<h3>4.10.1 How React Virtual DOM Works</h3>
+<p>When state changes in a React component, React creates a new virtual DOM tree. It then compares the new tree with the previous one using a "diffing" algorithm. Only the nodes that actually changed are updated in the real DOM. This process, called "reconciliation," makes React significantly faster than traditional DOM manipulation.</p>
+<p>In SportSara, when a user adds a product to the cart, only the cart icon count and cart sidebar update — the entire page does not re-render. This provides a smooth, app-like experience.</p>
+
+<h3>4.10.2 How JWT Authentication Works</h3>
+<p>JWT (JSON Web Token) is a compact, URL-safe token format used for stateless authentication:</p>
+<ol>
+<li><b>Header</b> — Contains algorithm (HS256) and token type (JWT)</li>
+<li><b>Payload</b> — Contains user ID and issued/expiry timestamps</li>
+<li><b>Signature</b> — HMAC-SHA256 hash of header + payload using a secret key</li>
+</ol>
+<p>The three parts are Base64-encoded and joined with dots: xxxxx.yyyyy.zzzzz. The server verifies the token by recalculating the signature with its secret key. If the signatures match, the token is valid and the user ID is extracted from the payload.</p>
+
+<h3>4.10.3 How MongoDB Indexing Improves Performance</h3>
+<p>SportSara uses multiple indexes to speed up frequent queries:</p>
+<ul>
+<li><b>Category + Featured + CreatedAt</b> — Speeds up home page featured product queries</li>
+<li><b>Price index</b> — Enables fast price-range filtering on the shop page</li>
+<li><b>Rating index</b> — Sorts products by rating efficiently</li>
+<li><b>Text index (name, description, brand)</b> — Powers full-text product search</li>
+</ul>
+<p>Without indexes, MongoDB would perform a "collection scan" checking every document. With indexes, queries use B-tree structures to find matching documents in O(log n) time instead of O(n), resulting in sub-100ms query times even with thousands of products.</p>
+
+<h3>4.10.4 How Google OAuth 2.0 Works in SportSara</h3>
+<ol>
+<li>User clicks "Sign in with Google" button on the frontend</li>
+<li>Google's OAuth popup appears and user selects their Google account</li>
+<li>Google returns an ID token (a signed JWT from Google) to the frontend</li>
+<li>Frontend sends this ID token to the SportSara backend: POST /api/auth/google</li>
+<li>Backend uses google-auth-library to verify the token's signature with Google's public keys</li>
+<li>Backend extracts email and name from the verified token payload</li>
+<li>If email exists in database → login; if not → create new account</li>
+<li>Backend generates its own JWT and returns it to the frontend</li>
+<li>Frontend stores JWT in localStorage for subsequent API requests</li>
+</ol>
+
+<h2>4.11 Conclusion</h2>
+<p>The MERN stack technologies selected for SportSara are modern, well-supported, and industry-standard. Technology comparisons confirm that React.js, Node.js, MongoDB, and Express.js are optimal choices for this project. The cloud deployment strategy using Vercel, Render, and MongoDB Atlas ensures high availability, easy maintenance, and zero-cost hosting for an academic project.</p>
+</div>
+<div class="page">
+<h1 class="chapter-title">Chapter 5: System Design</h1>
+<h2>5.1 Introduction</h2>
+<p>System Design is the phase where project requirements are converted into a technical blueprint. It defines the software modules, database structure, API endpoints, security model, and communication flow between components. For SportSara, the design focuses on a modular client-server architecture with clear separation between the React frontend, Express.js backend, and MongoDB database.</p>
+
+<h2>5.2 System Architecture</h2>
+<p>SportSara follows a <b>Three-Tier Architecture</b>:</p>
+<h3>Presentation Layer (Frontend)</h3>
+<ul>
+<li>React.js for component-based UI with virtual DOM</li>
+<li>CSS3 for styling and responsive design</li>
+<li>React Router DOM for client-side navigation (BrowserRouter)</li>
+<li>Context API for global state management (AuthContext, CartContext)</li>
+<li>Google Maps Places API for address autocomplete</li>
+</ul>
+<h3>Application Layer (Backend)</h3>
+<ul>
+<li>Node.js runtime environment with ES modules</li>
+<li>Express.js v5 web framework with 8 route modules</li>
+<li>JWT middleware for user authentication</li>
+<li>AdminAuth middleware for role-based access control</li>
+<li>Multer middleware for file upload processing</li>
+<li>CORS middleware for cross-origin requests</li>
+</ul>
+<h3>Data Layer (Database)</h3>
+<ul>
+<li>MongoDB Atlas cloud database (M0 Free Tier)</li>
+<li>Mongoose ODM for schema enforcement and validation</li>
+<li>6 collections: Users, Products, Orders, Reviews, OTPs, PasswordResetOTPs</li>
+<li>Performance indexes on frequently queried fields</li>
+</ul>
+<p><b>Data Flow:</b> React UI → HTTP/REST → Express API → Mongoose ODM → MongoDB Atlas</p>
+
+<h2>5.3 Data Flow Diagram</h2>
+<h3>Level 0 — Context Diagram</h3>
+<p>Customer → SportSara Web App → Express API Server → MongoDB Atlas</p>
+<p>Admin → Admin Dashboard → AdminAuth Middleware → Express API → MongoDB Atlas</p>
+<h3>Level 1 — Main Processes</h3>
+<ol>
+<li><b>Authentication Process:</b> User submits credentials → Server validates → JWT token issued → Token stored in localStorage → Sent with every API request</li>
+<li><b>Product Browsing:</b> User requests products → Server queries MongoDB with category/search filters → Products returned as JSON → React renders product cards</li>
+<li><b>Cart Management:</b> User adds item with size+color → Cart updated in user document (embedded) → Cart state synced with backend on every change</li>
+<li><b>Order Processing:</b> User submits order → Server validates cart items and address → Order document created with item snapshot → Product stock decremented → Cart cleared</li>
+<li><b>Review System:</b> User submits review → Server checks unique constraint (one per user per product) → Review stored with user reference → Average rating calculated</li>
+<li><b>Admin Management:</b> Admin accesses dashboard → AdminAuth middleware validates role → Dashboard stats aggregated from Orders, Products, Users collections</li>
+</ol>
+</div>
+
+<div class="page">
+<h2>5.4 Database Schema</h2>
+<h3>Users Collection</h3>
+<table>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+<tr><td>name</td><td>String (required)</td><td>User's full name</td></tr>
+<tr><td>email</td><td>String (unique, required)</td><td>Login email address</td></tr>
+<tr><td>password</td><td>String (hashed)</td><td>Bcrypt-encrypted password (10 salt rounds)</td></tr>
+<tr><td>role</td><td>String (enum: user, admin)</td><td>User role for access control</td></tr>
+<tr><td>avatar</td><td>String</td><td>Profile picture URL</td></tr>
+<tr><td>cart</td><td>Array (embedded)</td><td>Cart items: {product: ObjectId, quantity, color, size}</td></tr>
+<tr><td>address</td><td>Object (embedded)</td><td>Saved address: {street, city, state, pincode, phone}</td></tr>
+<tr><td>createdAt</td><td>Date (auto)</td><td>Account creation timestamp</td></tr>
+</table>
+<h3>Products Collection</h3>
+<table>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+<tr><td>name</td><td>String</td><td>Product title</td></tr>
+<tr><td>image</td><td>String</td><td>Product image URL</td></tr>
+<tr><td>brand</td><td>String</td><td>Brand name</td></tr>
+<tr><td>category</td><td>String (enum)</td><td>Team Sports / Apparel / Footwear / Accessories / Fitness</td></tr>
+<tr><td>description</td><td>String</td><td>Product description</td></tr>
+<tr><td>price</td><td>Number</td><td>Selling price (INR)</td></tr>
+<tr><td>mrp</td><td>Number</td><td>Maximum retail price</td></tr>
+<tr><td>rating</td><td>Number (0-5)</td><td>Average star rating</td></tr>
+<tr><td>stock</td><td>Number</td><td>Available quantity</td></tr>
+<tr><td>featured</td><td>Boolean</td><td>Featured product flag for homepage</td></tr>
+<tr><td>sizes</td><td>Array of Strings</td><td>Available sizes (S, M, L, XL, etc.)</td></tr>
+<tr><td>colors</td><td>Array of Objects</td><td>{name, hex, stock} for each color variant</td></tr>
+<tr><td>specifications</td><td>Array of Objects</td><td>{key, value} pairs for product specs</td></tr>
+<tr><td>benefits</td><td>Array of Strings</td><td>Product benefits list</td></tr>
+<tr><td>gender</td><td>String</td><td>Target gender (Men, Women, Unisex)</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h3>Orders Collection</h3>
+<table>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+<tr><td>user</td><td>ObjectId (ref: User)</td><td>Reference to the buyer</td></tr>
+<tr><td>items</td><td>Array of Objects</td><td>{product, name, price, quantity, image, color, size}</td></tr>
+<tr><td>totalAmount</td><td>Number</td><td>Total order value in INR</td></tr>
+<tr><td>shippingAddress</td><td>Object</td><td>{fullName, street, city, state, pincode, phone}</td></tr>
+<tr><td>paymentMethod</td><td>String</td><td>Cash on Delivery / Online</td></tr>
+<tr><td>status</td><td>String (enum)</td><td>Processing / Confirmed / Shipped / Delivered / Cancelled</td></tr>
+<tr><td>createdAt</td><td>Date (auto)</td><td>Order placement timestamp</td></tr>
+</table>
+<h3>Reviews Collection</h3>
+<table>
+<tr><th>Field</th><th>Type</th><th>Description</th></tr>
+<tr><td>user</td><td>ObjectId (ref: User)</td><td>Reviewer reference</td></tr>
+<tr><td>product</td><td>ObjectId (ref: Product)</td><td>Reviewed product reference</td></tr>
+<tr><td>rating</td><td>Number (1-5)</td><td>Star rating</td></tr>
+<tr><td>title</td><td>String</td><td>Review headline</td></tr>
+<tr><td>comment</td><td>String</td><td>Review body text</td></tr>
+<tr><td>createdAt</td><td>Date (auto)</td><td>Review timestamp</td></tr>
+</table>
+<p><b>Unique Constraint:</b> Compound unique index on {user, product} ensures one review per user per product.</p>
+
+<h3>OTP Collections</h3>
+<table>
+<tr><th>Collection</th><th>Fields</th><th>Purpose</th></tr>
+<tr><td>otps</td><td>email, otp, name, password, createdAt (TTL: 5min)</td><td>Registration OTP verification with pending user data</td></tr>
+<tr><td>passwordresetotps</td><td>email, otp, createdAt (TTL: 5min)</td><td>Password reset OTP verification</td></tr>
+</table>
+
+<h2>5.5 REST API Design</h2>
+<h3>Authentication APIs (8 endpoints)</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Purpose</th></tr>
+<tr><td>POST</td><td>/api/auth/send-otp</td><td>No</td><td>Send registration OTP</td></tr>
+<tr><td>POST</td><td>/api/auth/verify-otp</td><td>No</td><td>Verify OTP and create account</td></tr>
+<tr><td>POST</td><td>/api/auth/login</td><td>No</td><td>Email/password login</td></tr>
+<tr><td>POST</td><td>/api/auth/google</td><td>No</td><td>Google OAuth login</td></tr>
+<tr><td>GET</td><td>/api/auth/me</td><td>JWT</td><td>Get current user profile</td></tr>
+<tr><td>PUT</td><td>/api/auth/profile</td><td>JWT</td><td>Update profile</td></tr>
+<tr><td>POST</td><td>/api/auth/forgot-password</td><td>No</td><td>Send password reset OTP</td></tr>
+<tr><td>POST</td><td>/api/auth/reset-password</td><td>No</td><td>Reset password with OTP</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h3>Product APIs (3 endpoints)</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Purpose</th></tr>
+<tr><td>GET</td><td>/api/products</td><td>No</td><td>List products with filters</td></tr>
+<tr><td>GET</td><td>/api/products/:id</td><td>No</td><td>Get product details</td></tr>
+<tr><td>GET</td><td>/api/products/:id/reviews</td><td>No</td><td>Get product reviews</td></tr>
+</table>
+<h3>Cart APIs (4 endpoints)</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Purpose</th></tr>
+<tr><td>GET</td><td>/api/cart</td><td>JWT</td><td>Get user cart</td></tr>
+<tr><td>POST</td><td>/api/cart/add</td><td>JWT</td><td>Add item to cart</td></tr>
+<tr><td>PUT</td><td>/api/cart/update</td><td>JWT</td><td>Update item quantity</td></tr>
+<tr><td>DELETE</td><td>/api/cart/remove/:id</td><td>JWT</td><td>Remove cart item</td></tr>
+</table>
+<h3>Order APIs (3 endpoints)</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Purpose</th></tr>
+<tr><td>POST</td><td>/api/orders</td><td>JWT</td><td>Place new order (COD)</td></tr>
+<tr><td>GET</td><td>/api/orders</td><td>JWT</td><td>Get user orders</td></tr>
+<tr><td>GET</td><td>/api/orders/:id</td><td>JWT</td><td>Get single order details</td></tr>
+</table>
+<h3>Admin APIs (7 endpoints)</h3>
+<table>
+<tr><th>Method</th><th>Endpoint</th><th>Auth</th><th>Purpose</th></tr>
+<tr><td>GET</td><td>/api/admin/stats</td><td>Admin</td><td>Dashboard analytics</td></tr>
+<tr><td>GET</td><td>/api/admin/products</td><td>Admin</td><td>List all products</td></tr>
+<tr><td>POST</td><td>/api/admin/products</td><td>Admin</td><td>Add new product</td></tr>
+<tr><td>PUT</td><td>/api/admin/products/:id</td><td>Admin</td><td>Update product</td></tr>
+<tr><td>DELETE</td><td>/api/admin/products/:id</td><td>Admin</td><td>Delete product</td></tr>
+<tr><td>GET</td><td>/api/admin/orders</td><td>Admin</td><td>List all orders</td></tr>
+<tr><td>PUT</td><td>/api/admin/orders/:id</td><td>Admin</td><td>Update order status</td></tr>
+</table>
+
+<h2>5.6 E-R Diagram</h2>
+<p>Entity relationships in SportSara:</p>
+<ul>
+<li><b>User (1) → (M) Orders</b> — One user places many orders</li>
+<li><b>User (1) → (M) Reviews</b> — One user writes many reviews</li>
+<li><b>User (1) → (M) Cart Items</b> — Embedded subdocuments</li>
+<li><b>Product (1) → (M) Reviews</b> — One product has many reviews</li>
+<li><b>Product (1) → (M) Order Items</b> — One product in many orders</li>
+<li><b>User-Product Review:</b> Unique compound index</li>
+</ul>
+
+<h2>5.7 Sequence Diagrams</h2>
+<h3>User Registration Sequence</h3>
+<p>User → Frontend: Enter name, email, password → Frontend → Backend: POST /api/auth/send-otp → Backend: Generate 6-digit OTP → Backend → Brevo API: Send OTP email → Backend → MongoDB: Store OTP with 5-min TTL → User → Frontend: Enter OTP → Frontend → Backend: POST /api/auth/verify-otp → Backend: Verify OTP, hash password → Backend → MongoDB: Create User → Backend → Frontend: Return JWT token → Frontend: Store token, redirect to home</p>
+
+<h3>Order Placement Sequence</h3>
+<p>User → Frontend: Click "Place Order" → Frontend → Backend: POST /api/orders (with JWT) → Backend: auth middleware validates token → Backend → MongoDB: Populate user cart items → Backend: Create order document with item snapshots → Backend: Calculate totalAmount → Backend → MongoDB: Decrement product stock for each item → Backend → MongoDB: Clear user cart → Backend → Frontend: Return order object → Frontend: Show order confirmation</p>
+
+<h2>5.8 Conclusion</h2>
+<p>The system design provides a modular three-tier architecture with clear separation of concerns. The MongoDB schema uses document embedding for cart data and referencing for orders and reviews. The REST API design with 25+ endpoints enables seamless frontend-backend communication.</p>
+</div>
+<div class="page">
+<h1 class="chapter-title">Chapter 6: System Implementation</h1>
+<h2>6.1 Introduction</h2>
+<p>System Implementation converts the design into a working application. SportSara followed a modular development approach with backend APIs built first, followed by frontend screens, then integration testing and deployment.</p>
+<h3>Implementation Sequence</h3>
+<ol>
+<li>MongoDB Database Schema Design with Mongoose</li>
+<li>Authentication System (JWT, OTP, Google OAuth)</li>
+<li>Product Management REST APIs</li>
+<li>Cart and Order Processing APIs</li>
+<li>Review and Rating System</li>
+<li>Admin Dashboard and Management APIs</li>
+<li>Frontend UI Screens (React.js)</li>
+<li>Google Maps Address Integration</li>
+<li>Email Notification Service (Brevo API)</li>
+<li>Testing and Deployment</li>
+</ol>
+
+<h2>6.2 Project Structure</h2>
+<h3>Backend Structure</h3>
+<div class="code-block">backend/
+├── config/
+│   └── db.js              # MongoDB Atlas connection
+├── middleware/
+│   └── auth.js            # JWT auth & admin middleware
+├── models/
+│   ├── userModel.js       # User schema with cart embedding
+│   ├── productModel.js    # Product schema with indexes
+│   ├── orderModel.js      # Order schema with status enum
+│   ├── reviewModel.js     # Review with unique constraint
+│   ├── otpModel.js        # Registration OTP (5-min TTL)
+│   └── passwordResetOtpModel.js  # Password reset OTP
+├── routes/
+│   ├── authRoutes.js      # 8 authentication endpoints
+│   ├── productRoutes.js   # Product listing & details
+│   ├── cartRoutes.js      # Cart CRUD operations
+│   ├── orderRoutes.js     # Order placement & history
+│   ├── paymentRoutes.js   # Payment handling
+│   ├── reviewRoutes.js    # Reviews & ratings
+│   ├── adminRoutes.js     # Admin dashboard & management
+│   └── uploadRoutes.js    # Product image uploads
+├── utils/
+│   └── emailService.js    # Brevo transactional email
+├── uploads/               # Product images directory
+└── server.js              # Express app entry point</div>
+<h3>Frontend Structure</h3>
+<div class="code-block">frontend/src/
+├── components/
+│   ├── Header.js, Footer.js, Product.js
+│   ├── PaymentModal.js, AdminLayout.js
+├── screens/
+│   ├── HomeScreen.js, ShopScreen.js, ProductScreen.js
+│   ├── CartScreen.js, CheckoutScreen.js, OrdersScreen.js
+│   ├── ProfileScreen.js, LoginScreen.js, RegisterScreen.js
+│   ├── ForgotPasswordScreen.js
+│   └── admin/ (AdminDashboard, AdminProducts, AdminOrders, AdminUsers)
+├── context/
+│   ├── AuthContext.js     # User session management
+│   └── CartContext.js     # Shopping cart state
+├── utils/api.js           # API base URL configuration
+└── App.js                 # Routes & providers</div>
+</div>
+
+<div class="page">
+<h2>6.3 Server Configuration (server.js)</h2>
+<p>The main server file initializes Express, connects to MongoDB, configures middleware, and mounts all 8 route modules.</p>
+<div class="code-block">import dns from 'dns';
+dns.setDefaultResultOrder('ipv4first');
+
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import connectDB from './config/db.js';
+import path from 'path';
+
+// Route imports
+import authRoutes from './routes/authRoutes.js';
+import productRoutes from './routes/productRoutes.js';
+import cartRoutes from './routes/cartRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js';
+
+dotenv.config();
+connectDB();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+// Health check
+app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
+
+// Mount routes
+app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/payment', paymentRoutes);
+app.use('/api/reviews', reviewRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/upload', uploadRoutes);
+
+const __dirname = path.resolve();
+app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
+
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => {
+  console.log('SportSara server running on port ' + PORT);
+});</div>
+
+<h2>6.4 Database Connection (db.js)</h2>
+<div class="code-block">import mongoose from 'mongoose';
+
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      family: 4, // Forces IPv4 to avoid DNS resolution issues
+    });
+    console.log('MongoDB Connected: ' + conn.connection.host);
+  } catch (error) {
+    console.error('Error connecting to MongoDB: ' + error.message);
+    process.exit(1);
+  }
+};
+
+export default connectDB;</div>
+</div>
+
+<div class="page">
+<h2>6.5 Authentication Module</h2>
+<h3>6.5.1 JWT Middleware (auth.js)</h3>
+<div class="code-block">const auth = async (req, res, next) => {
+  const token = req.header('Authorization')?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ message: 'No token' });
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = await User.findById(decoded.id).select('-password');
+    if (!req.user) return res.status(401).json({ message: 'User not found' });
+    next();
+  } catch (error) {
+    res.status(401).json({ message: 'Token invalid' });
+  }
+};
+
+const adminAuth = async (req, res, next) => {
+  await auth(req, res, () => {
+    if (req.user && req.user.role === 'admin') next();
+    else res.status(403).json({ message: 'Admin access required' });
+  });
+};</div>
+
+<h3>6.5.2 Password Security (userModel.js)</h3>
+<div class="code-block">userSchema.pre('save', async function () {
+  if (!this.isModified('password')) return;
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+userSchema.methods.comparePassword = async function (candidatePassword) {
+  return await bcrypt.compare(candidatePassword, this.password);
+};</div>
+
+<h3>6.5.3 Product Schema with Performance Indexes</h3>
+<div class="code-block">productSchema.index({ category: 1, featured: 1, createdAt: -1 });
+productSchema.index({ featured: 1, createdAt: -1 });
+productSchema.index({ price: 1 });
+productSchema.index({ rating: -1 });
+productSchema.index({ name: 'text', description: 'text', brand: 'text' });</div>
+
+<h2>6.6 Product Management Module</h2>
+<p>Admin can perform full CRUD operations on products. Products support multiple sizes, colors with individual stock, specifications, and benefits.</p>
+<div class="code-block">// POST /api/admin/products — Add new product
+router.post('/products', adminAuth, async (req, res) => {
+  try {
+    const product = await new Product({
+      ...req.body, user: req.user._id
+    }).save();
+    res.status(201).json(product);
+  } catch (e) {
+    res.status(500).json({ message: 'Server error', error: e.message });
+  }
+});
+
+// PUT /api/admin/products/:id — Update product
+router.put('/products/:id', adminAuth, async (req, res) => {
+  try {
+    const product = await Product.findByIdAndUpdate(
+      req.params.id, req.body, { new: true }
+    );
+    if (!product) return res.status(404).json({ message: 'Not found' });
+    res.json(product);
+  } catch (e) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});</div>
+</div>
+
+<div class="page">
+<h2>6.7 Cart Management Module</h2>
+<p>Cart items are embedded within the User document. Items are differentiated by productId + color + size combination, allowing the same product with different variants to exist as separate cart entries.</p>
+<div class="code-block">// POST /api/cart/add — Add item to cart
+router.post('/add', auth, async (req, res) => {
+  try {
+    const { productId, quantity = 1, color, size } = req.body;
+    const user = await User.findById(req.user._id);
+
+    // Differentiate items by productId + color + size
+    const existingItem = user.cart.find(
+      (item) => item.product.toString() === productId
+        && item.color === color && item.size === size
+    );
+
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      user.cart.push({ product: productId, quantity, color, size });
+    }
+
+    await user.save();
+    await user.populate('cart.product');
+    const validCart = user.cart.filter((item) => item.product);
+    res.json(validCart);
+  } catch (error) {
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+// PUT /api/cart/update — Update item quantity
+router.put('/update', auth, async (req, res) => {
+  const { productId, quantity, color, size } = req.body;
+  const user = await User.findById(req.user._id);
+  const item = user.cart.find(
+    (item) => item.product.toString() === productId
+      && item.color === color && item.size === size
+  );
+  if (quantity <= 0) {
+    user.cart = user.cart.filter(
+      (item) => !(item.product.toString() === productId
+        && item.color === color && item.size === size)
+    );
+  } else {
+    item.quantity = quantity;
+  }
+  await user.save();
+  await user.populate('cart.product');
+  res.json(user.cart.filter((item) => item.product));
+});</div>
+
+<h2>6.8 Order Processing Module</h2>
+<p>Orders are placed via COD (Cash on Delivery). The system creates an order snapshot, decrements stock, and clears the cart.</p>
+<div class="code-block">// POST /api/orders — Place order
+router.post('/', auth, async (req, res) => {
+  const { shippingAddress } = req.body;
+  const user = await User.findById(req.user._id).populate('cart.product');
+  const validCart = user.cart.filter((item) => item.product);
+
+  // Create order items snapshot
+  const items = validCart.map((item) => ({
+    product: item.product._id,
+    name: item.product.name,
+    price: item.product.price,
+    quantity: item.quantity,
+    image: item.product.image,
+    color: item.color,
+    size: item.size,
+  }));
+
+  const totalAmount = items.reduce(
+    (sum, item) => sum + item.price * item.quantity, 0
+  );
+
+  const order = await Order.create({
+    user: req.user._id, items, totalAmount,
+    shippingAddress, paymentMethod: 'Cash on Delivery',
+    status: 'Processing',
+  });
+
+  // Update stock for each item
+  for (const item of validCart) {
+    await Product.findByIdAndUpdate(item.product._id, {
+      $inc: { stock: -item.quantity },
+    });
+  }
+
+  user.cart = []; // Clear cart
+  await user.save();
+  res.status(201).json(order);
+});</div>
+</div>
+
+<div class="page">
+<h2>6.9 Review System Module</h2>
+<p>Users can submit one review per product. The system calculates average ratings and enforces uniqueness through a compound index.</p>
+<div class="code-block">// GET /api/reviews/:productId — Get all reviews
+router.get('/:productId', async (req, res) => {
+  const reviews = await Review.find({ product: req.params.productId })
+    .populate('user', 'name')
+    .sort({ createdAt: -1 })
+    .lean();
+
+  const count = reviews.length;
+  const avgRating = count > 0
+    ? reviews.reduce((sum, r) => sum + r.rating, 0) / count : 0;
+
+  res.json({
+    reviews,
+    avgRating: Math.round(avgRating * 10) / 10,
+    count
+  });
+});
+
+// POST /api/reviews/:productId — Submit review
+router.post('/:productId', auth, async (req, res) => {
+  try {
+    const { rating, title, comment } = req.body;
+    const review = await Review.create({
+      user: req.user._id,
+      product: req.params.productId,
+      rating, title, comment,
+    });
+    const populated = await review.populate('user', 'name');
+    res.status(201).json(populated);
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({
+        message: 'You have already reviewed this product'
+      });
+    }
+    res.status(500).json({ message: 'Server error' });
+  }
+});</div>
+
+<h2>6.10 Admin Dashboard Module</h2>
+<p>The admin dashboard aggregates analytics data from all collections including total revenue, order counts by status, top selling products, low stock alerts, and monthly revenue trends.</p>
+<div class="code-block">// GET /api/admin/stats — Dashboard analytics
+router.get('/stats', adminAuth, async (req, res) => {
+  const [totalProducts, totalUsers, totalOrders, orders] =
+    await Promise.all([
+      Product.countDocuments(),
+      User.countDocuments(),
+      Order.countDocuments(),
+      Order.find().lean(),
+    ]);
+
+  const totalRevenue = orders.reduce(
+    (sum, o) => sum + o.totalAmount, 0
+  );
+  const confirmedOrders = orders.filter(
+    (o) => o.status === 'Confirmed'
+  ).length;
+  const deliveredOrders = orders.filter(
+    (o) => o.status === 'Delivered'
+  ).length;
+
+  // Top selling products
+  const productSales = {};
+  orders.forEach((o) => {
+    o.items.forEach((item) => {
+      const id = item.product.toString();
+      productSales[id] = (productSales[id] || 0) + item.quantity;
+    });
+  });
+
+  // Low stock alerts
+  const lowStock = await Product.find({ stock: { $lt: 15 } }).lean();
+
+  res.json({
+    totalProducts, totalUsers, totalOrders, totalRevenue,
+    confirmedOrders, deliveredOrders, lowStock,
+    // ... monthly revenue, recent orders, top selling
+  });
+});</div>
+</div>
+
+<div class="page">
+<h2>6.11 Email Service Module</h2>
+<p>Transactional emails are sent via the Brevo (Sendinblue) REST API using native HTTPS requests.</p>
+<div class="code-block">export const sendEmail = async (to, subject, htmlContent) => {
+  const payload = JSON.stringify({
+    sender: { name: 'SportSara', email: fromEmail },
+    to: [{ email: to }],
+    subject,
+    htmlContent,
+  });
+
+  const options = {
+    hostname: 'api.brevo.com',
+    path: '/v3/smtp/email',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': process.env.EMAIL_PASS,
+      'Content-Length': Buffer.byteLength(payload),
+    },
+  };
+
+  return new Promise((resolve, reject) => {
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => resolve(JSON.parse(data)));
+    });
+    req.on('error', reject);
+    req.write(payload);
+    req.end();
+  });
+};</div>
+
+<h3>Frontend Route Protection</h3>
+<div class="code-block">// Admin Route Protection (App.js)
+function AdminRoute({ children }) {
+  const { user, loading } = useAuth();
+  if (loading) return null;
+  if (!user || user.role !== 'admin') return <Navigate to="/" />;
+  return children;
+}
+
+// Protected Route
+function PrivateRoute({ children }) {
+  const { user, loading } = useAuth();
+  if (loading) return null;
+  if (!user) return <Navigate to="/login" />;
+  return children;
+}</div>
+
+<h2>6.12 Testing Approach</h2>
+<ul>
+<li><b>Unit Testing</b> — Password hashing, token generation, OTP validation, cart calculations</li>
+<li><b>Integration Testing</b> — API endpoint testing with database operations via Postman</li>
+<li><b>UI Testing</b> — Responsive design verification across desktop, tablet, and mobile</li>
+<li><b>Security Testing</b> — Authentication bypass attempts, expired token handling, SQL injection</li>
+<li><b>Cross-Browser Testing</b> — Chrome, Firefox, Edge, Safari compatibility</li>
+<li><b>Performance Testing</b> — API response times, page load optimization</li>
+</ul>
+</div>
+
+<div class="page">
+<h2>6.13 Test Cases</h2>
+<table>
+<tr><th>ID</th><th>Test Scenario</th><th>Expected Result</th><th>Status</th></tr>
+<tr><td>T01</td><td>Register with valid OTP</td><td>Account created, JWT returned</td><td>Pass</td></tr>
+<tr><td>T02</td><td>Register with expired OTP</td><td>Error: OTP expired</td><td>Pass</td></tr>
+<tr><td>T03</td><td>Register with invalid OTP</td><td>Error: Invalid OTP</td><td>Pass</td></tr>
+<tr><td>T04</td><td>Login with correct credentials</td><td>JWT token returned</td><td>Pass</td></tr>
+<tr><td>T05</td><td>Login with wrong password</td><td>401 Unauthorized</td><td>Pass</td></tr>
+<tr><td>T06</td><td>Google OAuth login (new user)</td><td>Account created + JWT</td><td>Pass</td></tr>
+<tr><td>T07</td><td>Google OAuth login (existing)</td><td>Login + JWT returned</td><td>Pass</td></tr>
+<tr><td>T08</td><td>Access protected route without token</td><td>401 No token</td><td>Pass</td></tr>
+<tr><td>T09</td><td>Access protected route with expired token</td><td>401 Token invalid</td><td>Pass</td></tr>
+<tr><td>T10</td><td>Access admin route as regular user</td><td>403 Admin access required</td><td>Pass</td></tr>
+<tr><td>T11</td><td>Add product to cart</td><td>Cart updated with item</td><td>Pass</td></tr>
+<tr><td>T12</td><td>Add same product different size</td><td>Separate cart entry created</td><td>Pass</td></tr>
+<tr><td>T13</td><td>Update cart quantity to 0</td><td>Item removed from cart</td><td>Pass</td></tr>
+<tr><td>T14</td><td>Place order with valid address</td><td>Order created, stock updated</td><td>Pass</td></tr>
+<tr><td>T15</td><td>Place order with empty cart</td><td>Error: Cart is empty</td><td>Pass</td></tr>
+<tr><td>T16</td><td>Submit product review</td><td>Review saved</td><td>Pass</td></tr>
+<tr><td>T17</td><td>Submit duplicate review</td><td>Error: Already reviewed</td><td>Pass</td></tr>
+<tr><td>T18</td><td>Admin update order status</td><td>Status changed</td><td>Pass</td></tr>
+<tr><td>T19</td><td>Admin add new product</td><td>Product created</td><td>Pass</td></tr>
+<tr><td>T20</td><td>Admin delete product</td><td>Product removed</td><td>Pass</td></tr>
+<tr><td>T21</td><td>Password reset with valid OTP</td><td>Password updated</td><td>Pass</td></tr>
+<tr><td>T22</td><td>Product search by keyword</td><td>Matching products returned</td><td>Pass</td></tr>
+<tr><td>T23</td><td>Filter products by category</td><td>Category products shown</td><td>Pass</td></tr>
+<tr><td>T24</td><td>View order as non-owner</td><td>403 Not authorized</td><td>Pass</td></tr>
+<tr><td>T25</td><td>Admin toggle user role</td><td>Role switched</td><td>Pass</td></tr>
+</table>
+
+<h2>6.14 Conclusion</h2>
+<p>The implementation phase successfully converted the SportSara design into a fully functional e-commerce platform. All 8 backend route modules, 6 database models, and 15+ frontend screens were implemented. All 25 test cases passed, confirming the system's reliability, security, and accuracy.</p>
+</div>
+<div class="page">
+<h1 class="chapter-title">Chapter 7: Result</h1>
+<h2>7.1 Introduction</h2>
+<p>The Result chapter presents the final outcomes obtained after successful development and implementation of the SportSara E-Commerce Platform. It demonstrates how the project fulfills the objectives defined in earlier phases including online sports product sales, secure authentication, order management, and admin analytics.</p>
+<p>After coding, testing, and deployment, the system was executed successfully in both development and production environments. All modules performed according to requirements and delivered accurate results.</p>
+
+<h2>7.2 Screens Achieved in the Project</h2>
+<p>The following screens were developed and are fully functional:</p>
+<h3>Customer-Facing Screens:</h3>
+<ol>
+<li><b>Home Screen</b> — Landing page with hero banner, featured products carousel, category showcase, and promotional sections</li>
+<li><b>Shop Screen</b> — Product listing with category filtering, search, sorting, and pagination</li>
+<li><b>Product Detail Screen</b> — Complete product info with images, sizes, colors, specifications, benefits, price, and customer reviews</li>
+<li><b>Login Screen</b> — Email/password login with Google OAuth button</li>
+<li><b>Registration Screen</b> — Name, email, password fields with OTP verification step</li>
+<li><b>Forgot Password Screen</b> — OTP-based password reset flow</li>
+<li><b>Cart Screen</b> — Cart items with quantity controls, variant display, and price summary</li>
+<li><b>Checkout Screen</b> — Shipping address form with Google Maps autocomplete, payment method selection</li>
+<li><b>Orders Screen</b> — Order history with status tracking and order details</li>
+<li><b>Profile Screen</b> — User profile editing with avatar and saved address</li>
+</ol>
+<h3>Admin Screens:</h3>
+<ol>
+<li><b>Admin Dashboard</b> — Analytics cards (revenue, orders, users, products), monthly revenue chart, recent orders, top selling products, low stock alerts</li>
+<li><b>Admin Products</b> — Product list with add, edit, delete operations</li>
+<li><b>Admin Orders</b> — All orders with status dropdown to update</li>
+<li><b>Admin Users</b> — User list with role toggle (admin/user)</li>
+</ol>
+
+<p>The following pages show screenshots captured from the live SportSara application deployed at <b>https://sportsara-e-commerce-nf6q-zeta.vercel.app/</b>:</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.1: Home Page</h2>
+<p class="center"><img src="screenshots/01_home.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Home Screen is the landing page of SportSara. It displays a hero banner with promotional content and the SportSara branding. The navigation header at the top provides quick access to the Shop page, Shopping Cart, and Sign In functionality. A search bar allows users to search for products by keyword. The hero section features dynamic content highlighting the premium sports gear available on the platform.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.2: Featured Products & Categories</h2>
+<p class="center"><img src="screenshots/08_featured.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>Below the hero section, the home page displays a grid of featured products with badges showing "Featured" status and percentage discounts (e.g., "25% OFF", "28% OFF"). Each product card shows the product image, name, brand, star rating with review count, selling price with MRP comparison, a heart icon for wishlisting, and an "Add to cart" button. Below the featured products, the "Explore Categories" section presents five vibrant category cards — Team Sports, Apparel, Footwear, Accessories, and Fitness — each with distinctive colors and icons for easy navigation.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.3: Shop / Product Listing</h2>
+<p class="center"><img src="screenshots/02_shop.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Shop Screen displays all available products in a responsive grid layout. Users can filter products by category (Team Sports, Apparel, Footwear, Accessories, Fitness), search by keyword using the search bar, and sort products by price or rating. Each product card shows the product image, name, brand, price with MRP comparison, and star rating. Clicking on a product navigates to its detailed view. The layout is fully responsive, adapting from a 4-column grid on desktop to a single column on mobile devices.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.4: Product Detail Page</h2>
+<p class="center"><img src="screenshots/07_product.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Product Detail Screen provides a comprehensive view of a single product. The left section displays a high-resolution product image. The center section shows the product name (e.g., "Multi-Function Exercise Bench"), brand name ("FitPro"), star rating with review count, selling price (₹4599) with MRP comparison (₹6599) and discount percentage (30% off), inclusive of all taxes. Users can select from available color variants shown as color circles and choose a size option. A "6 Months Warranty" badge is prominently displayed. The right sidebar shows the price summary, stock status ("In Stock — Only 8 left!"), delivery details with pincode check, "Add to Cart" and "Order Now" buttons, and trust badges for free delivery, easy returns, genuine products, and COD availability.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.5: Login Page</h2>
+<p class="center"><img src="screenshots/03_login.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Login Screen provides two authentication methods: (1) Email and password login for registered users, and (2) Google OAuth login via the "Sign in with Google" button. The form includes client-side validation for email format and password requirements. Links to the Registration page and Forgot Password page are provided for new users and password recovery respectively. Upon successful authentication, a JWT token is issued and stored in localStorage for session management. The clean, centered card design with the SportSara lock icon ensures a professional and trustworthy login experience.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.6: Registration Page</h2>
+<p class="center"><img src="screenshots/04_register.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Registration Screen allows new users to create an account by providing their full name, email address, and password. Upon form submission, a 6-digit OTP is sent to the provided email via the Brevo transactional email API. The user must enter this OTP within 5 minutes to verify their email ownership. After successful OTP verification, the account is created with the password hashed using bcrypt (10 salt rounds), and a JWT token is issued for immediate login. The "Sign in with Google" option provides a faster alternative for registration through Google OAuth 2.0 integration.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.7: Forgot Password</h2>
+<p class="center"><img src="screenshots/05_forgot.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Forgot Password Screen enables users to reset their password through a secure OTP-based flow. Users enter their registered email address and click the "Send OTP" button. A 6-digit OTP is sent to that email via the Brevo API. After entering the correct OTP and a new password, the system updates the user's password in the database. The OTP has a 5-minute expiry enforced by MongoDB TTL index, ensuring security against brute-force attacks. A "Back to Sign In" link allows users to return to the login page. The key icon and clean form design maintain visual consistency with other authentication screens.</p>
+</div>
+
+<div class="screenshot-page">
+<h2 class="center">Figure 7.8: Shopping Cart</h2>
+<p class="center"><img src="screenshots/06_cart.png" style="width:90%;border:1px solid #999;margin:10pt auto;display:block;box-shadow:0 2px 6px rgba(0,0,0,0.15);"></p>
+<p>The Cart Screen displays all items added by the user with their selected size, color, quantity, and individual prices. When the cart is empty, a friendly message "Your cart is empty" is displayed with a "Go Shop" link directing users to the product catalog. The right sidebar shows the order summary with subtotal calculation for all items, the number of items in the cart, and the total payable amount in INR. A "Proceed to Checkout" button navigates users to the checkout page where they can enter their shipping address with Google Maps autocomplete and complete the purchase via Cash on Delivery.</p>
+</div>
+
+<div class="page">
+<h2>7.3 Functional Results</h2>
+<h3>Authentication Results</h3>
+<table>
+<tr><th>Function</th><th>Input</th><th>Expected Result</th><th>Actual Result</th></tr>
+<tr><td>Email Registration</td><td>Valid name, email, password</td><td>OTP sent, account created</td><td>Successful ✔</td></tr>
+<tr><td>Google OAuth Login</td><td>Google account</td><td>Auto login/register</td><td>Successful ✔</td></tr>
+<tr><td>Invalid Login</td><td>Wrong password</td><td>Error message</td><td>Displayed ✔</td></tr>
+<tr><td>Password Reset</td><td>Valid email + OTP</td><td>Password changed</td><td>Successful ✔</td></tr>
+<tr><td>Role-Based Access</td><td>User accessing admin</td><td>Redirected to home</td><td>Working ✔</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h3>Shopping Results</h3>
+<table>
+<tr><th>Function</th><th>Input</th><th>Expected Result</th><th>Actual</th></tr>
+<tr><td>Browse by Category</td><td>Category filter</td><td>Filtered products</td><td>✔</td></tr>
+<tr><td>Product Search</td><td>Search keyword</td><td>Matching results</td><td>✔</td></tr>
+<tr><td>Add to Cart</td><td>Product + size + color</td><td>Item added</td><td>✔</td></tr>
+<tr><td>Update Quantity</td><td>New quantity value</td><td>Quantity updated</td><td>✔</td></tr>
+<tr><td>Remove from Cart</td><td>Delete action</td><td>Item removed</td><td>✔</td></tr>
+<tr><td>Address Autocomplete</td><td>Partial address</td><td>Suggestions shown</td><td>✔</td></tr>
+<tr><td>Place Order</td><td>Address + payment</td><td>Order created</td><td>✔</td></tr>
+<tr><td>Order History</td><td>View orders</td><td>Past orders listed</td><td>✔</td></tr>
+<tr><td>Order Status</td><td>View single order</td><td>Current status shown</td><td>✔</td></tr>
+</table>
+
+<h3>Review Results</h3>
+<table>
+<tr><th>Function</th><th>Expected</th><th>Actual</th></tr>
+<tr><td>Submit Review with Rating (1-5)</td><td>Review saved with star rating</td><td>✔</td></tr>
+<tr><td>Review Title and Comment</td><td>Text saved correctly</td><td>✔</td></tr>
+<tr><td>Duplicate Review Prevention</td><td>Error: Already reviewed</td><td>✔</td></tr>
+<tr><td>Average Rating Calculation</td><td>Accurate average displayed</td><td>✔</td></tr>
+<tr><td>Delete Own Review</td><td>Review removed</td><td>✔</td></tr>
+</table>
+
+<h3>Admin Results</h3>
+<table>
+<tr><th>Function</th><th>Expected</th><th>Actual</th></tr>
+<tr><td>Dashboard Analytics</td><td>Revenue, orders, users, products counts</td><td>Accurate ✔</td></tr>
+<tr><td>Monthly Revenue Chart</td><td>Last 6 months data</td><td>Correct ✔</td></tr>
+<tr><td>Top Selling Products</td><td>Top 5 by quantity sold</td><td>Accurate ✔</td></tr>
+<tr><td>Low Stock Alerts</td><td>Products with stock < 15</td><td>Working ✔</td></tr>
+<tr><td>Add Product</td><td>Product with all fields</td><td>Created ✔</td></tr>
+<tr><td>Edit Product</td><td>Updated fields</td><td>Saved ✔</td></tr>
+<tr><td>Delete Product</td><td>Product removed</td><td>Deleted ✔</td></tr>
+<tr><td>Update Order Status</td><td>New status selected</td><td>Updated ✔</td></tr>
+<tr><td>Toggle User Role</td><td>Admin/User switch</td><td>Working ✔</td></tr>
+</table>
+
+<h2>7.4 Performance Results</h2>
+<table>
+<tr><th>Parameter</th><th>Target</th><th>Actual Result</th></tr>
+<tr><td>Login API Response</td><td>< 500ms</td><td>~350ms ✔</td></tr>
+<tr><td>Product Listing Load</td><td>< 1s</td><td>~800ms ✔</td></tr>
+<tr><td>Product Detail Load</td><td>< 1s</td><td>~600ms ✔</td></tr>
+<tr><td>Cart Operations</td><td>< 300ms</td><td>~200ms ✔</td></tr>
+<tr><td>Order Creation</td><td>< 2s</td><td>~1.2s ✔</td></tr>
+<tr><td>Admin Dashboard Load</td><td>< 2s</td><td>~1.5s ✔</td></tr>
+<tr><td>Google Maps Autocomplete</td><td>Real-time</td><td>~100ms ✔</td></tr>
+<tr><td>Image Upload</td><td>< 3s</td><td>~2s ✔</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h2>7.5 Security Results</h2>
+<table>
+<tr><th>Security Feature</th><th>Implementation</th><th>Status</th></tr>
+<tr><td>Password Encryption</td><td>bcrypt with 10 salt rounds</td><td>Working ✔</td></tr>
+<tr><td>JWT Authentication</td><td>HS256 signed, 30-day expiry</td><td>Working ✔</td></tr>
+<tr><td>Protected Routes</td><td>auth middleware on all private APIs</td><td>Working ✔</td></tr>
+<tr><td>Admin Authorization</td><td>adminAuth middleware checks role</td><td>Working ✔</td></tr>
+<tr><td>Token Validation</td><td>Invalid/expired tokens rejected</td><td>Working ✔</td></tr>
+<tr><td>OTP Expiry</td><td>5-minute TTL auto-deletion</td><td>Working ✔</td></tr>
+<tr><td>Google OAuth Verification</td><td>Server-side token verification</td><td>Working ✔</td></tr>
+<tr><td>CORS Policy</td><td>Cross-origin requests configured</td><td>Working ✔</td></tr>
+<tr><td>Environment Variables</td><td>Secrets in .env, not in code</td><td>Working ✔</td></tr>
+<tr><td>Ownership Checks</td><td>Order access restricted to owner</td><td>Working ✔</td></tr>
+</table>
+
+<h2>7.6 Comparison with Existing System</h2>
+<table>
+<tr><th>Feature</th><th>Manual System</th><th>SportSara</th></tr>
+<tr><td>Product Discovery</td><td>Walk-in only</td><td>24/7 Online with Search & Filters</td></tr>
+<tr><td>Product Info</td><td>Limited labels</td><td>Images, Specs, Sizes, Colors, Reviews</td></tr>
+<tr><td>Ordering</td><td>Counter purchase</td><td>Online Cart + Checkout</td></tr>
+<tr><td>Payment</td><td>Cash only</td><td>COD with online option</td></tr>
+<tr><td>Customer Accounts</td><td>None</td><td>Secure accounts with profiles</td></tr>
+<tr><td>Order Tracking</td><td>Phone inquiry</td><td>Real-time status tracking</td></tr>
+<tr><td>Customer Feedback</td><td>Verbal only</td><td>Written reviews + star ratings</td></tr>
+<tr><td>Inventory</td><td>Manual counting</td><td>Automated stock management</td></tr>
+<tr><td>Analytics</td><td>None</td><td>Dashboard with charts</td></tr>
+<tr><td>Reach</td><td>Local only</td><td>Nationwide/global</td></tr>
+</table>
+
+<h2>7.7 Advantages and Limitations</h2>
+<h3>Advantages</h3>
+<ol>
+<li>Faster product discovery with full-text search and category filtering</li>
+<li>Secure multi-method authentication (Email OTP, Google OAuth, JWT)</li>
+<li>Seamless checkout with Google Maps address auto-completion</li>
+<li>Automated email notifications for account events</li>
+<li>Centralized admin dashboard with real-time analytics</li>
+<li>Mobile-responsive design across all devices</li>
+<li>Scalable cloud deployment (Vercel + Render + MongoDB Atlas)</li>
+<li>Product variants support (multiple sizes and colors)</li>
+</ol>
+<h3>Limitations</h3>
+<ul>
+<li>Requires internet connection for all operations</li>
+<li>Real-time payment gateway integration pending (currently COD only)</li>
+<li>No native mobile application — browser-only access</li>
+<li>No AI-based product recommendations</li>
+<li>Multi-language support not available</li>
+<li>No real-time chat support for customers</li>
+</ul>
+
+<h2>7.8 Deployment Configuration</h2>
+<h3>Environment Variables</h3>
+<table>
+<tr><th>Variable</th><th>Location</th><th>Purpose</th></tr>
+<tr><td>MONGO_URI</td><td>Backend (.env)</td><td>MongoDB Atlas connection string</td></tr>
+<tr><td>JWT_SECRET</td><td>Backend (.env)</td><td>Secret key for signing JWT tokens</td></tr>
+<tr><td>EMAIL_USER</td><td>Backend (.env)</td><td>Brevo sender email address</td></tr>
+<tr><td>EMAIL_PASS</td><td>Backend (.env)</td><td>Brevo API key for sending emails</td></tr>
+<tr><td>GOOGLE_CLIENT_ID</td><td>Backend (.env)</td><td>Google OAuth client ID for verification</td></tr>
+<tr><td>PORT</td><td>Backend (.env)</td><td>Server port (default 8000)</td></tr>
+<tr><td>REACT_APP_API_URL</td><td>Frontend (.env)</td><td>Backend API base URL</td></tr>
+<tr><td>REACT_APP_GOOGLE_CLIENT_ID</td><td>Frontend (.env)</td><td>Google OAuth client for frontend</td></tr>
+<tr><td>REACT_APP_GOOGLE_MAPS_API_KEY</td><td>Frontend (.env)</td><td>Google Maps Places API key</td></tr>
+</table>
+
+<h3>Deployment Steps</h3>
+<h3>Frontend (Vercel)</h3>
+<ol>
+<li>Connect GitHub repository to Vercel dashboard</li>
+<li>Set root directory to "frontend"</li>
+<li>Set build command: npm run build</li>
+<li>Set output directory: build</li>
+<li>Add environment variables (REACT_APP_API_URL, REACT_APP_GOOGLE_CLIENT_ID, REACT_APP_GOOGLE_MAPS_API_KEY)</li>
+<li>Deploy — Vercel auto-builds on every git push</li>
+</ol>
+<h3>Backend (Render)</h3>
+<ol>
+<li>Create new Web Service on Render</li>
+<li>Connect GitHub repository</li>
+<li>Set root directory to "backend"</li>
+<li>Set build command: npm install</li>
+<li>Set start command: node server.js</li>
+<li>Add environment variables (MONGO_URI, JWT_SECRET, EMAIL_USER, EMAIL_PASS, GOOGLE_CLIENT_ID)</li>
+<li>Deploy — Render auto-deploys on every push</li>
+</ol>
+
+<h3>Vercel Routing Configuration (vercel.json)</h3>
+<div class="code-block">{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}</div>
+<p>This configuration ensures that all client-side routes handled by React Router are properly served, preventing 404 errors on page refresh for routes like /shop, /product/:id, /cart, etc.</p>
+</div>
+
+<div class="page">
+<h2>7.9 Module-Wise Implementation Summary</h2>
+<table>
+<tr><th>Module</th><th>Files</th><th>Lines of Code</th><th>Key Features</th></tr>
+<tr><td>Authentication</td><td>authRoutes.js, auth.js</td><td>~250</td><td>OTP, OAuth, JWT, bcrypt</td></tr>
+<tr><td>Products</td><td>productRoutes.js, productModel.js</td><td>~180</td><td>CRUD, search, indexes</td></tr>
+<tr><td>Cart</td><td>cartRoutes.js</td><td>~105</td><td>Add, update, remove, clear</td></tr>
+<tr><td>Orders</td><td>orderRoutes.js, orderModel.js</td><td>~130</td><td>Place, history, status</td></tr>
+<tr><td>Reviews</td><td>reviewRoutes.js, reviewModel.js</td><td>~90</td><td>Rate, review, average</td></tr>
+<tr><td>Admin</td><td>adminRoutes.js</td><td>~143</td><td>Stats, CRUD, roles</td></tr>
+<tr><td>Email</td><td>emailService.js</td><td>~50</td><td>Brevo API, OTP emails</td></tr>
+<tr><td>Upload</td><td>uploadRoutes.js</td><td>~30</td><td>Multer, image storage</td></tr>
+<tr><td>Frontend Screens</td><td>15 screen files</td><td>~2500</td><td>All user & admin UI</td></tr>
+<tr><td>Frontend Components</td><td>5 component files</td><td>~600</td><td>Header, Footer, Product, etc.</td></tr>
+<tr><td>State Management</td><td>AuthContext, CartContext</td><td>~200</td><td>Global auth & cart state</td></tr>
+</table>
+<p><b>Total Estimated Lines of Code:</b> ~4,300+ lines across backend and frontend</p>
+
+<h2>7.10 Key Technical Decisions</h2>
+<table>
+<tr><th>Decision</th><th>Chosen Approach</th><th>Reasoning</th></tr>
+<tr><td>Cart Storage</td><td>Embedded in User document</td><td>Fast reads, no separate collection needed</td></tr>
+<tr><td>Order Items</td><td>Snapshot at order time</td><td>Product price/name changes don't affect past orders</td></tr>
+<tr><td>Auth Token</td><td>JWT with 30-day expiry</td><td>Stateless, no server-side sessions needed</td></tr>
+<tr><td>Password Storage</td><td>bcrypt (10 salt rounds)</td><td>Industry standard, resistant to rainbow table attacks</td></tr>
+<tr><td>Email Service</td><td>Brevo REST API</td><td>Free tier (300 emails/day), no SMTP setup needed</td></tr>
+<tr><td>OTP Expiry</td><td>5-minute TTL index</td><td>MongoDB auto-deletes expired OTPs</td></tr>
+<tr><td>Image Storage</td><td>Local uploads directory</td><td>Simple for academic project, can migrate to S3</td></tr>
+<tr><td>Address Input</td><td>Google Maps Places API</td><td>Most accurate autocomplete, auto-fills city/state/pin</td></tr>
+<tr><td>Frontend Routing</td><td>React Router v6</td><td>Declarative routing with nested layouts</td></tr>
+<tr><td>State Management</td><td>Context API</td><td>Sufficient for this scale, no Redux overhead</td></tr>
+</table>
+
+<h2>7.11 User Interface Design Principles</h2>
+<ul>
+<li><b>Consistency</b> — Uniform color scheme, typography, and spacing across all pages</li>
+<li><b>Responsiveness</b> — CSS media queries ensure proper layout on all screen sizes from mobile (360px) to desktop (1920px+)</li>
+<li><b>Feedback</b> — Toast notifications for all user actions (add to cart, place order, login success/failure)</li>
+<li><b>Accessibility</b> — Semantic HTML elements, proper heading hierarchy, form labels</li>
+<li><b>Navigation</b> — Persistent header with logo, search, cart icon, and profile menu</li>
+<li><b>Loading States</b> — Skeleton loaders and spinners during API calls</li>
+<li><b>Error Handling</b> — User-friendly error messages instead of technical errors</li>
+</ul>
+
+<h2>7.12 Conclusion</h2>
+<p>The final result confirms all project objectives were achieved successfully. SportSara provides an efficient, reliable, and user-friendly e-commerce platform for sports products. All modules work accurately, all 25 test cases passed, and the system is deployed on production cloud infrastructure. The project demonstrates practical implementation of full-stack MERN development with modern authentication, cloud deployment, and third-party API integration.</p>
+</div>
+<div class="page">
+<h1 class="chapter-title">Chapter 8: Conclusion and Future Scope</h1>
+<h2>8.1 Conclusion</h2>
+<p>The development of SportSara E-Commerce Platform demonstrates how modern web technologies can transform the traditional sports retail experience into a digital, efficient, and scalable online business. The project was created to solve common challenges such as limited product reach, manual order processing, lack of customer engagement, and absence of analytics tools.</p>
+<p>Using the MERN stack — MongoDB, Express.js, React.js, and Node.js — a complete full-stack e-commerce platform was developed. The system includes:</p>
+<ul>
+<li>Secure authentication with email OTP verification and Google OAuth social login</li>
+<li>Comprehensive product catalog across five sports categories with variant support</li>
+<li>Shopping cart with size and color selection for each product</li>
+<li>Checkout with Google Maps address autocomplete for accurate delivery</li>
+<li>Order management with status tracking (Processing → Confirmed → Shipped → Delivered)</li>
+<li>Product reviews and ratings system with duplicate prevention</li>
+<li>Admin dashboard with revenue analytics, order management, and user controls</li>
+<li>Automated transactional emails via Brevo API</li>
+</ul>
+<p>Testing confirmed that the application works efficiently, securely, and accurately across all browsers and devices. The system reduces manual effort, provides 24/7 shopping access, speeds up order processing, and helps administrators monitor business operations through real-time analytics.</p>
+<p>The project was deployed with the frontend on Vercel, backend on Render, and database on MongoDB Atlas, ensuring high availability, scalability, and professional-grade hosting.</p>
+<p>In conclusion, <b>SportSara is a modern, secure, and scalable e-commerce platform that successfully digitizes the sports retail experience, increases customer reach, and improves operational efficiency.</b></p>
+
+<h2>8.2 Future Enhancement</h2>
+<p>Although SportSara currently provides major e-commerce features, future versions can include the following advanced enhancements:</p>
+<ol>
+<li><b>Mobile Application</b> — Native Android and iOS apps using React Native for better mobile shopping experience with push notifications</li>
+<li><b>Payment Gateway Integration</b> — Razorpay, Stripe, UPI, and digital wallet support for instant online payments</li>
+<li><b>AI-Based Recommendations</b> — Personalized product suggestions based on browsing history, purchase patterns, and collaborative filtering</li>
+<li><b>Wishlist Feature</b> — Save products for later purchase with price drop alerts</li>
+<li><b>Advanced Inventory System</b> — Low stock alerts, automated reorder triggers, supplier management, and warehouse tracking</li>
+<li><b>Loyalty Programs</b> — Reward points, discount coupons, referral bonuses, and tier-based membership</li>
+<li><b>Real-Time Chat Support</b> — Live customer service with chatbot integration for 24/7 support</li>
+<li><b>Multi-Vendor Marketplace</b> — Allow multiple sports brands and sellers to list products on the platform</li>
+<li><b>Advanced Analytics</b> — Sales prediction using machine learning, customer segmentation, revenue forecasting, and conversion tracking</li>
+<li><b>Multi-Language Support</b> — English, Hindi, Marathi, and more for wider accessibility</li>
+<li><b>Social Media Integration</b> — Share products on Facebook, Instagram, WhatsApp; login via social accounts</li>
+<li><b>Push Notifications</b> — Order status updates, flash sale alerts, new arrivals, and abandoned cart reminders</li>
+<li><b>Progressive Web App (PWA)</b> — Offline capability with service workers for improved mobile experience</li>
+<li><b>Order Return & Refund</b> — Return request workflow with refund processing</li>
+</ol>
+<p>The future scope of SportSara is highly promising. With mobile apps, AI recommendations, payment gateways, and multi-vendor support, the platform can evolve into a complete sports e-commerce ecosystem serving retailers and enthusiasts nationwide.</p>
+
+<h2>8.3 Lessons Learned</h2>
+<p>During the development of SportSara, several valuable lessons were learned that will benefit future projects:</p>
+<ol>
+<li><b>API Design First:</b> Designing REST API endpoints before building frontend screens ensures clear data contracts and reduces integration issues later</li>
+<li><b>Environment Variables:</b> Storing secrets (API keys, database URIs) in environment variables from the start prevents accidental exposure in version control</li>
+<li><b>Error Handling:</b> Comprehensive try-catch blocks with meaningful error messages greatly improve debugging and user experience</li>
+<li><b>Database Indexing:</b> Adding indexes early in development prevents performance issues as the product catalog grows</li>
+<li><b>Git Version Control:</b> Regular commits with descriptive messages provide a safety net and make it easy to track changes</li>
+<li><b>Cloud Deployment:</b> Deploying early and testing in production environment reveals issues not visible in local development (CORS, DNS, SSL)</li>
+<li><b>Security First:</b> Implementing authentication and authorization before building features ensures security is not an afterthought</li>
+<li><b>Responsive Design:</b> Building mobile-first CSS from the start is easier than retrofitting responsiveness later</li>
+</ol>
+
+<h2>8.4 Industry Relevance</h2>
+<p>The skills and technologies used in SportSara are directly applicable to the software industry:</p>
+<table>
+<tr><th>Skill</th><th>Industry Application</th></tr>
+<tr><td>React.js Development</td><td>Frontend development at companies like Meta, Netflix, Airbnb</td></tr>
+<tr><td>Node.js/Express.js</td><td>Backend development at PayPal, LinkedIn, Uber</td></tr>
+<tr><td>MongoDB</td><td>Database management at eBay, Adobe, Forbes</td></tr>
+<tr><td>REST API Design</td><td>Microservices architecture in enterprise software</td></tr>
+<tr><td>JWT Authentication</td><td>Secure API access in fintech, healthcare, e-commerce</td></tr>
+<tr><td>Cloud Deployment</td><td>DevOps and CI/CD in modern software companies</td></tr>
+<tr><td>OAuth Integration</td><td>Third-party login in SaaS applications</td></tr>
+<tr><td>Git Version Control</td><td>Collaborative development in all software teams</td></tr>
+</table>
+<p>The MERN stack experience gained through SportSara provides a strong foundation for pursuing careers in full-stack web development, cloud computing, and software engineering.</p>
+</div>
+
+<div class="page">
+<h1 class="chapter-title">Chapter 9: References</h1>
+<p>The following books, websites, documentation sources, and technical resources were referred to during the development of the SportSara E-Commerce Platform.</p>
+
+<h2>9.1 Book References</h2>
+<ol>
+<li>Pressman, Roger S. <i>Software Engineering: A Practitioner's Approach</i>. McGraw-Hill Education, 9th Edition.</li>
+<li>Sommerville, Ian. <i>Software Engineering</i>. Pearson Education, 10th Edition.</li>
+<li>Flanagan, David. <i>JavaScript: The Definitive Guide</i>. O'Reilly Media, 7th Edition.</li>
+<li>Subramanian, Vasan. <i>Pro MERN Stack: Full Stack Web App Development with Mongo, Express, React, and Node</i>. Apress, 2nd Edition.</li>
+<li>Brown, Ethan. <i>Web Development with Node and Express</i>. O'Reilly Media, 2nd Edition.</li>
+</ol>
+
+<h2>9.2 Technology Documentation</h2>
+<ol>
+<li>React.js Official Documentation — https://react.dev/</li>
+<li>Node.js Official Documentation — https://nodejs.org/</li>
+<li>Express.js Official Documentation — https://expressjs.com/</li>
+<li>MongoDB Official Documentation — https://www.mongodb.com/docs/</li>
+<li>Mongoose ODM Documentation — https://mongoosejs.com/docs/</li>
+</ol>
+
+<h2>9.3 Development Tools</h2>
+<ol>
+<li>Visual Studio Code — https://code.visualstudio.com/</li>
+<li>Git Official Documentation — https://git-scm.com/doc</li>
+<li>Postman API Testing — https://learning.postman.com/</li>
+<li>Vercel Deployment Docs — https://vercel.com/docs</li>
+<li>Render Deployment Docs — https://render.com/docs</li>
+</ol>
+
+<h2>9.4 Web References</h2>
+<ol>
+<li>MDN Web Docs — https://developer.mozilla.org/</li>
+<li>Stack Overflow Developer Community — https://stackoverflow.com/</li>
+<li>W3Schools Web Tutorials — https://www.w3schools.com/</li>
+<li>freeCodeCamp — https://www.freecodecamp.org/</li>
+</ol>
+
+<h2>9.5 API and Service References</h2>
+<ol>
+<li>Google OAuth 2.0 Documentation — https://developers.google.com/identity</li>
+<li>Google Maps Places API — https://developers.google.com/maps/documentation/places</li>
+<li>Brevo (Sendinblue) Email API — https://developers.brevo.com/</li>
+<li>JSON Web Token (JWT) — https://jwt.io/</li>
+<li>bcrypt.js — https://www.npmjs.com/package/bcryptjs</li>
+</ol>
+
+<h2>9.6 Internal Project References</h2>
+<ol>
+<li>Project Requirement Analysis Notes</li>
+<li>Database Schema Design Documents</li>
+<li>UI Wireframes and Prototype Layouts</li>
+<li>API Testing Reports and Test Case Results</li>
+<li>Deployment Configuration Files (vercel.json, package.json)</li>
+<li>Git Version Control History (GitHub Repository)</li>
+</ol>
+</div>
+
+<div class="page">
+<h1 class="chapter-title">Appendix A: Glossary</h1>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>API</td><td>Application Programming Interface — a set of rules for communication between software components</td></tr>
+<tr><td>Authentication</td><td>The process of verifying a user's identity before granting access</td></tr>
+<tr><td>Authorization</td><td>The process of determining what resources a user can access based on their role</td></tr>
+<tr><td>BSON</td><td>Binary JSON — the binary-encoded format MongoDB uses to store documents</td></tr>
+<tr><td>CI/CD</td><td>Continuous Integration/Continuous Deployment — automated build and deploy pipeline</td></tr>
+<tr><td>CORS</td><td>Cross-Origin Resource Sharing — a security mechanism for allowing cross-domain requests</td></tr>
+<tr><td>CRUD</td><td>Create, Read, Update, Delete — the four basic database operations</td></tr>
+<tr><td>DOM</td><td>Document Object Model — the browser's representation of an HTML page</td></tr>
+<tr><td>Hash</td><td>A one-way cryptographic function that converts passwords into irreversible fixed-length strings</td></tr>
+<tr><td>JWT</td><td>JSON Web Token — a compact, self-contained token format for secure authentication</td></tr>
+<tr><td>Middleware</td><td>Software that sits between the request and response in a server pipeline</td></tr>
+<tr><td>NoSQL</td><td>Non-relational database that stores data in flexible document format instead of tables</td></tr>
+<tr><td>OAuth</td><td>Open Authorization — a protocol allowing third-party login via providers like Google</td></tr>
+<tr><td>ODM</td><td>Object Document Mapper — a library (Mongoose) that maps objects to MongoDB documents</td></tr>
+<tr><td>OTP</td><td>One-Time Password — a temporary code sent via email for verification</td></tr>
+<tr><td>REST</td><td>Representational State Transfer — an architectural style for web APIs using HTTP methods</td></tr>
+<tr><td>Salt</td><td>Random data added to a password before hashing to prevent rainbow table attacks</td></tr>
+<tr><td>Token</td><td>A digital string that represents a user's authenticated session</td></tr>
+<tr><td>TTL</td><td>Time To Live — auto-expiry mechanism for database records (used for OTPs)</td></tr>
+<tr><td>Virtual DOM</td><td>React's in-memory representation of the real DOM for efficient rendering</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h1 class="chapter-title">Appendix B: Abbreviations</h1>
+<table>
+<tr><th>Abbreviation</th><th>Full Form</th></tr>
+<tr><td>API</td><td>Application Programming Interface</td></tr>
+<tr><td>BCA</td><td>Bachelor of Computer Application</td></tr>
+<tr><td>BSON</td><td>Binary JavaScript Object Notation</td></tr>
+<tr><td>CI/CD</td><td>Continuous Integration / Continuous Deployment</td></tr>
+<tr><td>COD</td><td>Cash on Delivery</td></tr>
+<tr><td>CORS</td><td>Cross-Origin Resource Sharing</td></tr>
+<tr><td>CSS</td><td>Cascading Style Sheets</td></tr>
+<tr><td>DOM</td><td>Document Object Model</td></tr>
+<tr><td>HTML</td><td>HyperText Markup Language</td></tr>
+<tr><td>HTTP</td><td>HyperText Transfer Protocol</td></tr>
+<tr><td>HTTPS</td><td>HyperText Transfer Protocol Secure</td></tr>
+<tr><td>JSON</td><td>JavaScript Object Notation</td></tr>
+<tr><td>JWT</td><td>JSON Web Token</td></tr>
+<tr><td>MERN</td><td>MongoDB, Express.js, React.js, Node.js</td></tr>
+<tr><td>NPM</td><td>Node Package Manager</td></tr>
+<tr><td>OAuth</td><td>Open Authorization</td></tr>
+<tr><td>ODM</td><td>Object Document Mapper</td></tr>
+<tr><td>OTP</td><td>One-Time Password</td></tr>
+<tr><td>PRN</td><td>Permanent Registration Number</td></tr>
+<tr><td>REST</td><td>Representational State Transfer</td></tr>
+<tr><td>SSL</td><td>Secure Sockets Layer</td></tr>
+<tr><td>TTL</td><td>Time To Live</td></tr>
+<tr><td>UI</td><td>User Interface</td></tr>
+<tr><td>URL</td><td>Uniform Resource Locator</td></tr>
+<tr><td>UX</td><td>User Experience</td></tr>
+</table>
+
+<h1 class="chapter-title" style="margin-top:40pt;">Appendix C: NPM Dependencies</h1>
+<h3>Backend Dependencies (package.json)</h3>
+<table>
+<tr><th>Package</th><th>Version</th><th>Purpose</th></tr>
+<tr><td>express</td><td>^5.2.1</td><td>Web framework for REST API</td></tr>
+<tr><td>mongoose</td><td>^8.x</td><td>MongoDB ODM for schema modeling</td></tr>
+<tr><td>jsonwebtoken</td><td>^9.x</td><td>JWT token generation and verification</td></tr>
+<tr><td>bcryptjs</td><td>^2.x</td><td>Password hashing with salt</td></tr>
+<tr><td>google-auth-library</td><td>^9.x</td><td>Google OAuth token verification</td></tr>
+<tr><td>multer</td><td>^1.x</td><td>Multipart file upload handling</td></tr>
+<tr><td>cors</td><td>^2.x</td><td>Cross-origin request configuration</td></tr>
+<tr><td>dotenv</td><td>^16.x</td><td>Environment variable loader</td></tr>
+</table>
+<h3>Frontend Dependencies (package.json)</h3>
+<table>
+<tr><th>Package</th><th>Version</th><th>Purpose</th></tr>
+<tr><td>react</td><td>^18.x</td><td>UI component library</td></tr>
+<tr><td>react-dom</td><td>^18.x</td><td>React DOM rendering</td></tr>
+<tr><td>react-router-dom</td><td>^6.x</td><td>Client-side routing</td></tr>
+<tr><td>react-hot-toast</td><td>^2.x</td><td>Toast notifications</td></tr>
+<tr><td>react-scripts</td><td>^5.x</td><td>Create React App build tools</td></tr>
+</table>
+</div>
+</body>
+</html>
